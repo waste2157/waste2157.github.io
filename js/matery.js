@@ -106,6 +106,10 @@ $(function () {
             subHtmlSelectorRelative: true
             showThumbByDefault: false
         });
+        $(document).find('img[data-original]').each(function(){
+    $(this).parent().attr("href", $(this).attr("data-original"));
+});
+
 
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
@@ -178,6 +182,3 @@ setTimeout(function () {
         M.toast({ html: toastHTML })
     }
 }, 2000)
-$(document).find('img[data-original]').each(function(){
-    $(this).parent().attr("href", $(this).attr("data-original"));
-});
