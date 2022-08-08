@@ -104,6 +104,7 @@ $(function () {
             selector: '.img-item',
             // 启用字幕
             subHtmlSelectorRelative: true
+            showThumbByDefault: false
         });
 
         // progress bar init
@@ -177,3 +178,6 @@ setTimeout(function () {
         M.toast({ html: toastHTML })
     }
 }, 2000)
+$(document).find('img[data-original]').each(function(){
+    $(this).parent().attr("href", $(this).attr("data-original"));
+});
