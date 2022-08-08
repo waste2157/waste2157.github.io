@@ -626,20 +626,20 @@
 </ul>
 <hr>
 <h3 id="0x002-HEXO初级搭建"><a href="#0x002-HEXO初级搭建" class="headerlink" title="0x002 HEXO初级搭建"></a>0x002 HEXO初级搭建</h3><hr>
-<h4 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h4><p>Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。Git的作用是将本地的网页文件传到github上。  </p>
+<h4 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1. 安装git"></a>1. 安装git</h4><p><code>Git</code>是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。<code>Git</code>的作用是将本地的网页文件传到<code>github</code>上。  </p>
 <ul>
 <li>Git<a target="_blank" rel="noopener" href="https://git-scm.com/download">下载地址</a></li>
 <li>Git<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600">教程</a></li>
 </ul>
 <p>windows： 到git官网上下载.exe文件,Download git,安装选项一路默认即可。</p>
-<h4 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2. 安装nodejs"></a>2. 安装nodejs</h4><p>Hexo是基于node.js编写的，所以需要安装一下node.js和里面的npm工具。  </p>
+<h4 id="2-安装nodejs"><a href="#2-安装nodejs" class="headerlink" title="2. 安装nodejs"></a>2. 安装nodejs</h4><p>Hexo是基于<code>node.js</code>编写的，所以需要安装一下<code>node.js</code>和里面的<code>npm</code>工具。  </p>
 <p>windows： 到<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">Node.js官网</a>下载.exe文件，安装选项全部默认。安装好之后，按<code>Win+R</code>打开<code>cmd</code>命令提示符，输入<code>node -v</code>和<code>npm -v</code>，若出现版本号，则说明安装成功。</p>
 <h4 id="3-添加npm国内源"><a href="#3-添加npm国内源" class="headerlink" title="3. 添加npm国内源"></a>3. 添加npm国内源</h4><p>使用阿里的国内镜像进行加速下载</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> config <span class="token keyword">set</span> registry https://registry.npm.taobao.org
 </code></pre>
-<h4 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4. 安装Hexo"></a>4. 安装Hexo</h4><p>前面git和nodejs安装好后，就可以安装hexo了，你可以先创建一个文件夹MyBlog，用来存放自己的博客文件，然后cd到这个文件夹下（或者在这个文件夹下直接右键git bash打开）。</p>
+<h4 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4. 安装Hexo"></a>4. 安装Hexo</h4><p>前面<code>git</code>和<code>nodejs</code>安装好后，就可以安装<code>hexo</code>了，你可以先创建一个文件夹<code>MyBlog</code>，用来存放自己的博客文件，然后<code>cd</code>到这个文件夹下（或者在这个文件夹下直接右键<code>git bash</code>打开）。</p>
 <p>比如我的博客文件都存放在D:\MyBlog目录下。  </p>
-<p>在该目录下右键点击Git Bash Here，打开git的控制台窗口，以后我们所有的操作都在git控制台进行，就不用Windows自带的cmd了。</p>
+<p>在该目录下右键点击<code>Git Bash Here</code>，打开<code>git</code>的控制台窗口，以后我们所有的操作都在<code>git</code>控制台进行，就不用<code>Windows</code>自带的<code>cmd</code>了。</p>
 <p>定位到该目录下，输入一下代码安装Hexo。可能会有几个报错，不用理会。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli
 </code></pre>
@@ -666,24 +666,24 @@ hexo s
 <h4 id="5-注册Github账号创建个人仓库"><a href="#5-注册Github账号创建个人仓库" class="headerlink" title="5. 注册Github账号创建个人仓库"></a>5. 注册Github账号创建个人仓库</h4><p>接下来就去注册一个<code>github</code>账号，用来存放我们的网站。</p>
 <p>打开<code>https://github.com/</code>，新建一个项目仓库<code>New repository</code>，如下所示：</p>
 <p><img src="https://s1.ax1x.com/2022/08/08/vMoPUK.png" alt="image"></p>
-<p>然后如下图所示，输入自己的项目名字，后面一定要加.github.io后缀，注意图片上面的标注，红色框圈出来的内容必须一样，否则会报错。</p>
+<p>然后如下图所示，输入自己的项目名字，后面一定要加<code>.github.io</code>后缀，注意图片上面的标注，红色框圈出来的内容必须一样，否则会报错。</p>
 <p><img src="https://s1.ax1x.com/2022/08/08/vMo82Q.jpg" alt="image"></p>
 <blockquote>
-<p>注意：<br>要创建一个和你用户名相同的仓库，后面加<code>.github.io</code>，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是<code>https://xxxx.github.io</code>，其中xxx就是你注册GitHub的用户名。<br>例如我的：<a href="https://cx330lm.github.io/">https://Cx330Lm.github.io</a></p>
+<p>注意：<br>要创建一个和你用户名相同的仓库，后面加<code>.github.io</code>，只有这样，将来要部署到<code>GitHub page</code>的时候，才会被识别，也就是<code>https://xxxx.github.io</code>，其中<code>xxx</code>就是你注册<code>GitHub</code>的用户名。<br>例如我的：<a href="https://cx330lm.github.io/">https://Cx330Lm.github.io</a></p>
 </blockquote>
 <h4 id="6-生成SSH添加到GitHub"><a href="#6-生成SSH添加到GitHub" class="headerlink" title="6. 生成SSH添加到GitHub"></a>6. 生成SSH添加到GitHub</h4><p>生成<code>SSH</code>添加到<code>GitHub</code>，连接<code>Github</code>与本地。</p>
 <p>右键打开<code>git bash here</code>，然后输入下面命令：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config --global user.name <span class="token string">"注册GitHub用户名"</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"注册GitHub的邮箱"</span>
 </code></pre>
-<p>一下两条命令用于检查你设置的GitHub用户名和邮箱是否正确</p>
+<p>一下两条命令用于检查你设置的<code>GitHub</code>用户名和邮箱是否正确</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> config user.name
 <span class="token function">git</span> config user.email
 </code></pre>
-<p>然后创建SSH,一路回车即可</p>
+<p>然后创建<code>SSH</code>,一路回车即可</p>
 <pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -C <span class="token string">"注册GitHub的邮箱"</span>
 </code></pre>
-<p>这个时候它会告诉你已经生成了.ssh的文件夹。你可以在git bash中输入一下命令进行查看</p>
+<p>这个时候它会告诉你已经生成了<code>.ssh</code>的文件夹。你可以在<code>git bash</code>中输入一下命令进行查看</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cat</span> ~/.ssh/id_rsa.pub
 </code></pre>
 <p>将输出的内容复制到框中，点击确定保存。</p>
@@ -715,7 +715,7 @@ hexo deploy
 <h4 id="8-写文章和发布文章"><a href="#8-写文章和发布文章" class="headerlink" title="8. 写文章和发布文章"></a>8. 写文章和发布文章</h4><p>首先在博客根目录下右键打开<code>git bash here</code>，安装一个扩展<code>npm i hexo-deployer-git</code>。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i hexo-deployer-git
 </code></pre>
-<p>然后输入hexo new post “article title”，新建一篇文章。</p>
+<p>然后输入<code>hexo new post "article title"</code>，新建一篇文章。</p>
 <pre class=" language-bash"><code class="language-bash">hexo new post <span class="token string">"article title"</span>
 </code></pre>
 <p>然后打开<code>D:\MyBlog\source\_posts</code>的目录，可以发现下面多了一个文件夹和一个<code>.md</code>文件，一个用来存放你的图片等数据，另一个就是你的文章文件。</p>
@@ -738,7 +738,7 @@ hexo deploy
     - tags
 - themes
 </code></pre>
-<h5 id="1-2-Hexo基本设置"><a href="#1-2-Hexo基本设置" class="headerlink" title="1.2 Hexo基本设置"></a>1.2 Hexo基本设置</h5><p>在文件根目录下的_config.yml，就是整个hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置描述</a>。</p>
+<h5 id="1-2-Hexo基本设置"><a href="#1-2-Hexo基本设置" class="headerlink" title="1.2 Hexo基本设置"></a>1.2 Hexo基本设置</h5><p>在文件根目录下的<code>_config.yml</code>，就是整个<code>hexo</code>框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">配置描述</a>。</p>
 <h6 id="1-2-1-网站"><a href="#1-2-1-网站" class="headerlink" title="1.2.1 网站"></a>1.2.1 网站</h6><p>参数描述<code>title</code>网站标题<code>subtitle</code>网站副标题<code>description</code>网站描述<code>author</code>您的名字<code>language</code>网站使用的语言<code>timezone</code>网站时区。<code>Hexo</code> 默认使用您电脑的时区。时区列表。比如说：<code>America/New_York, Japan</code> 和 <code>UTC</code> 。</p>
 <p>其中，<code>description</code>主要用于<code>SEO</code>，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
 <h6 id="1-2-2-网址"><a href="#1-2-2-网址" class="headerlink" title="1.2.2 网址"></a>1.2.2 网址</h6><p>参数描述<code>url</code>网址<code>root</code>网站根目录 <code>permalink</code>文章的永久链接格式<code>permalink_defaults</code><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks">永久链接</a>中各部分的默认值</p>
@@ -899,7 +899,7 @@ prism_plugin:
 <span class="token function">npm</span> <span class="token function">install</span> --save live2d-widget-model-haruto  <span class="token comment" spellcheck="true">#海军服女孩</span>
 <span class="token function">npm</span> <span class="token function">install</span> --save live2d-widget-model-miku    <span class="token comment" spellcheck="true">#萝莉</span>
 </code></pre>
-<p>然后打开博客根目录下的 _config.yml文件，添加如下代码：</p>
+<p>然后打开博客根目录下的 <code>_config.yml</code>文件，添加如下代码：</p>
 <p>使用本地模型方式：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 添加动画live2d模块  npm install --save hexo-helper-live2d</span>
 <span class="token comment" spellcheck="true">## 下载动画人物库 npm install live2d-widget-model-z16 -D</span>
@@ -958,7 +958,7 @@ live2d:
     show: <span class="token boolean">false</span>
 </code></pre>
 <p>效果见右下角</p>
-<p><img src="https://s1.ax1x.com/2022/08/08/vMjnqe.png" alt="live2"></p>
+<p><img src="https://s1.ax1x.com/2022/08/08/vMjnqe.png" alt="live2看板娘"></p>
 <p><a target="_blank" rel="noopener" href="https://blog.17lai.site/posts/4a2050e2/#%E6%9B%B4%E5%BC%BA%E5%A4%A7%E7%9A%84%E7%9C%8B%E6%9D%BF%E5%A8%98">更强大的看板娘</a></p>
 <h5 id="2-13-添加夜间模式切换"><a href="#2-13-添加夜间模式切换" class="headerlink" title="2.13 添加夜间模式切换"></a>2.13 添加夜间模式切换</h5><h6 id="2-13-1-设置基础样式"><a href="#2-13-1-设置基础样式" class="headerlink" title="2.13.1 设置基础样式"></a>2.13.1 设置基础样式</h6><p>参考其他优秀产品的黑夜模式，得出共性：</p>
 <p>那就是黑夜模式的背景一般不会是纯黑（#000）；而是淡黑色，字体也不是纯白（#fff）而浅白色<br>图片亮度降低<br>下面就开始贴代码了</p>
@@ -1044,7 +1044,7 @@ body.DarkMode .skillbar .skill-bar-percent <span class="token punctuation">{</sp
 <span class="token punctuation">}</span>
 </code></pre>
 <h6 id="2-13-2-切换按钮"><a href="#2-13-2-切换按钮" class="headerlink" title="2.13.2 切换按钮"></a>2.13.2 切换按钮</h6><p>完成了背景、字体、图片的样式，就需要黑夜白天切换按钮了</p>
-<p>在 themes&gt;hexo-theme-matery&gt;layout&gt;_widget 中创建一个新的文件 day-night.ejs，在新建的文件中加入下面的代码</p>
+<p>在 <code>themes&gt;hexo-theme-matery&gt;layout&gt;_widget</code> 中创建一个新的文件 <code>day-night.ejs</code>，在新建的文件中加入下面的代码</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>-- 白天和黑夜主题 --<span class="token operator">></span>
 <span class="token operator">&lt;</span>div class<span class="token operator">=</span><span class="token string">"sum-moon-box"</span><span class="token operator">></span>
   <span class="token operator">&lt;</span>a class<span class="token operator">=</span><span class="token string">"btn-floating btn-large waves-effect waves-light"</span> onclick<span class="token operator">=</span><span class="token string">"switchNightMode()"</span> title<span class="token operator">=</span><span class="token string">"切换主题"</span> <span class="token operator">></span>
@@ -3421,7 +3421,7 @@ music:
     margin-bottom: 20px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<h3 id="0x004-更多详细教程"><a href="#0x004-更多详细教程" class="headerlink" title="0x004 更多详细教程"></a>0x004 更多详细教程</h3><p>以下几篇文章都是基于Hexo框架和hexo-theme-matery主题优化的教程，大家如果遇到问题，可以参考其中的方法。</p>
+<h3 id="0x004-更多详细教程"><a href="#0x004-更多详细教程" class="headerlink" title="0x004 更多详细教程"></a>0x004 更多详细教程</h3><p>以下几篇文章都是基于<code>Hexo</code>框架和<code>hexo-theme-matery</code>主题优化的教程，大家如果遇到问题，可以参考其中的方法。</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://sunhwee.com/posts/6e8839eb.html#toc-heading-33">Hexo+Github博客搭建完全教程</a></li>
 <li><a target="_blank" rel="noopener" href="http://www.luckyzmj.cn/posts/e3e08109.html#toc-heading-41">个人博客搭建</a></li>
@@ -3659,6 +3659,269 @@ music:
     
 
     
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'HjBcPzJACKnu4pVLJxOJlCkI-gzGzoHsz',
+        appKey: 'rUza9SpddyJqOIWyHDCzPoRv',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go'
+    });
+</script>
 
     
 
