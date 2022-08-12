@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, Cx330 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="WEB安全Nmap基础, Cx330 计算机 网络安全 渗透测试">
     <meta name="description" content="专科 | 电子信息工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Cx330</title>
+    <title>WEB安全Nmap基础 | Cx330</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -351,69 +351,508 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Cx330の博客
-                
-            </div>
+    
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['时间让我们沉淀，空间让我们成长。','Time lets us precipitate, space lets us grow.'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">WEB安全Nmap基础</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
 
 
-    </div>
-</div>
+<main class="post-container content">
 
-<main class="content">
-    <div id="contact" class="container chip-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Web-Security/">
+                                <span class="chip bg-color">Web Security</span>
+                            </a>
+                        
+                            <a href="/tags/nmap/">
+                                <span class="chip bg-color">nmap</span>
+                            </a>
+                        
+                            <a href="/tags/tools/">
+                                <span class="chip bg-color">tools</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/nmap/" class="post-category">
+                                nmap
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-08-12
                 </div>
                 
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-08-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    7 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_site_pv" style='display:none'></span>
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
-        <div class="card">
-            
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="0x001-nmap-概述"><a href="#0x001-nmap-概述" class="headerlink" title="0x001 nmap 概述"></a>0x001 nmap 概述</h3><hr>
+<p><code>Nmap</code>是一款开源免费的网络发现（<code>Network Discovery</code>）和安全审计（<code>Security Auditing</code>）工具。软件名字<code>Nmap</code>是<code>Network Mapper</code>的简称。<code>Nmap</code>最初是由<code>Fyodor</code>在1997年开始创建的。随后在开源社区众多的志愿者参与下，该工具逐渐成为最为流行安全必备工具之一。<br>一般情况下，<code>Nmap</code>用于列举网络主机清单、管理服务升级调度、监控主机或服务运行状况。<code>Nmap</code>可以检测目标机是否在线、端口开放情况、侦测运行的服务类型及版本信息、侦测操作系统与设备类型等信息。</p>
+<hr>
+<h3 id="0x002-nmap-特点"><a href="#0x002-nmap-特点" class="headerlink" title="0x002 nmap 特点"></a>0x002 nmap 特点</h3><hr>
+<ul>
+<li>主机探测：探测网络上的主机，如列出响应TCP和ICMP请求、ICMP请求、开放特别端口的主机。</li>
+<li>端口扫描：探测目标主机所开放的端口。</li>
+<li>版本检测：探测目标主机的网络服务，判断其服务名称及版本号。</li>
+<li>系统检测：探测目标主机的操作系统及网络设备的硬件特性。</li>
+</ul>
+<hr>
+<h3 id="0x003-nmap-端口状态介绍"><a href="#0x003-nmap-端口状态介绍" class="headerlink" title="0x003 nmap 端口状态介绍"></a>0x003 nmap 端口状态介绍</h3><hr>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>open</td>
+<td>开放的，表示应用程序正在监听该端口的连接，外部可以访问</td>
+</tr>
+<tr>
+<td>filtered</td>
+<td>被过滤的，表示端口被防火墙或其他网络设备阻止，不能访问</td>
+</tr>
+<tr>
+<td>closed</td>
+<td>关闭的，表示目标主机未开启该端口</td>
+</tr>
+<tr>
+<td>unfiltered</td>
+<td>未被过滤的，表示 Nmap 无法确定端口所处状态，需进一步探测</td>
+</tr>
+<tr>
+<td>open/filetered</td>
+<td>开放的或被过滤的，Nmap 不能识别</td>
+</tr>
+<tr>
+<td>closed/filtered</td>
+<td>关闭的或被过滤的，Namp 不能识别</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="0x004-nmap-扫描参数"><a href="#0x004-nmap-扫描参数" class="headerlink" title="0x004 nmap 扫描参数"></a>0x004 nmap 扫描参数</h3><hr>
+<p>语法结构：</p>
+<pre class=" language-bash"><code class="language-bash">nmap <span class="token punctuation">[</span>Scan Type<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>Options<span class="token punctuation">]</span> <span class="token punctuation">{</span>target specification<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="1-扫描目标格式"><a href="#1-扫描目标格式" class="headerlink" title="1.扫描目标格式"></a>1.扫描目标格式</h4><ul>
+<li>-iL:从文件中加载目标</li>
+<li>-iR:随机扫描</li>
+<li>–exclude <host or="" network="">:排除网段或主机地址</host></li>
+<li>–excledefile:排除文件中的地址</li>
+</ul>
+<h4 id="2-主机发现"><a href="#2-主机发现" class="headerlink" title="2.主机发现"></a>2.主机发现</h4><ul>
+<li>-sL:列出需要扫描的目标，不扫描</li>
+<li>-sn:只做ping扫描，不做端口扫描</li>
+<li>-Pn：跳过主机发现，视所有主机都在线</li>
+<li>-PS/PA/PU/PY[portlist]：基于TCP（SYN、ACK）、UDP、SCTP的指定端口的主机发现</li>
+<li>-PE/PP/PM：基于ICMP的echo、timestamp、network request的主机发现</li>
+<li>-PO[Protocol list]：基于IP协议字段的ping扫描</li>
+<li>-n/-R: -n表示不对目标最DNS解析，-R表示进行DNS解析，缺省为必要时候进行DNS解析</li>
+<li>–dns-servers &lt;serv1[,serv2],…&gt;: 指定DNS 服务器</li>
+<li>–system-dns:调用系统的DNS服务器</li>
+<li>–traceroute：显示追踪到目标的路径</li>
+</ul>
+<h4 id="3-端口扫描方法"><a href="#3-端口扫描方法" class="headerlink" title="3.端口扫描方法"></a>3.端口扫描方法</h4><ul>
+<li>-sS/sT/sA/sW/sM:指定使用TCP SYN/Connect()/ACK/Window/Maimon scans的方式目标主机进行扫描</li>
+<li>-sU:指定使用UDP扫描的方式确定目标主机的UDP端口状况</li>
+<li>-sN/sF/sX:指定使用TCP Null/FIN/Xmas scans秘密扫描的方式协助探测对方的TCP端口状态</li>
+<li>–scanflags<flags>:定制TCP包的flags</flags></li>
+<li>-sI&lt;zombie host[:probeport]&gt;:指定使用Idle scan的方式扫描目标主机(前提是需要找到合适的zombie host)</li>
+<li>-sY/sZ:使用SCTP INIT/COOKIE-ECHO扫描SCTP协议端口的开放情况</li>
+<li>-sO:使用IP protocol扫描确定目标机支持的协议类型</li>
+<li>-b<ftp relay="" host="">:使用FTP bounce scan扫描公式</ftp></li>
+</ul>
+<h4 id="4-端口相关参数"><a href="#4-端口相关参数" class="headerlink" title="4.端口相关参数"></a>4.端口相关参数</h4><ul>
+<li>-p:指定端口扫描范围，如：-p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080,S:9</li>
+<li>–exclude-ports <port ranges="">: 排除端口</port></li>
+<li>-F：扫描比缺省少的端口（缺省1000，加了-F100）</li>
+<li>-r：顺序扫描端口，缺省是随机分组扫描</li>
+<li>–top-ports <number>:按top排序扫描知名端口</number></li>
+<li>–port-ratio <ratio>: 按比例扫描知名端口，值在0-1之间，越小扫的越多</ratio></li>
+</ul>
+<h4 id="5-系统-x2F-版本检测"><a href="#5-系统-x2F-版本检测" class="headerlink" title="5.系统/版本检测"></a>5.系统/版本检测</h4><ul>
+<li>-sV:探测开放的端口的系统/服务信息</li>
+<li>–version-intensity <level>:指定版本侦测的强度(0-9)，默认为7，数值越高，探测出的服务越准确</level></li>
+<li>–version-light：输出最可能的版本信息，缺省是2</li>
+<li>–version-all：使用所有的探测条件进行版本/系统探测</li>
+<li>–version-trace:打印详细的版本扫描过程</li>
+</ul>
+<h4 id="6-脚本扫描"><a href="#6-脚本扫描" class="headerlink" title="6.脚本扫描"></a>6.脚本扫描</h4><ul>
+<li>–script=<lua scripts="">:指定脚本名称</lua></li>
+<li>–script-args=&lt;n1=v1,[n2=v2,…]&gt;:为脚本指定参数</li>
+<li>–script-help=<lua scripts="">: 查看脚本帮助信息</lua></li>
+<li>–script-updatedb:更新脚本数据库</li>
+</ul>
+<h4 id="7-系统检测"><a href="#7-系统检测" class="headerlink" title="7.系统检测"></a>7.系统检测</h4><ul>
+<li>-O:激活系统探测</li>
+<li>–osscan-limit:只对开放端口的有效主机进行系统探测</li>
+<li>–osscan-guess：推测系统信息</li>
+</ul>
+<h4 id="8-其他"><a href="#8-其他" class="headerlink" title="8.其他"></a>8.其他</h4><ul>
+<li>-T&lt;0-5&gt;:时间模板，越大速度越快，6个级别，推荐T4</li>
+<li>-6：表示使用IPV6探测</li>
+<li>-A：表示使用进攻性扫描</li>
+<li>-V：打印版本号</li>
+<li>-v：增加输出的详细程度</li>
+</ul>
+<hr>
+<h3 id="0x005-常用方法"><a href="#0x005-常用方法" class="headerlink" title="0x005 常用方法"></a>0x005 常用方法</h3><hr>
+<p><strong>扫描单个地址</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10
+</code></pre>
+<p><strong>扫描多个地址</strong><br>可以是不同网段、或在同一网段的少量地址</p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10 192.168.100.15
+</code></pre>
+<p><strong>扫描一个范围内的目标地址</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10-60
+</code></pre>
+<p><strong>扫描目标地址所在的某个网段</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10/24
+</code></pre>
+<p><strong>扫描主机列表 ip.txt 中的所有目标地址</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -iL C:\ip.txt
+</code></pre>
+<p><strong>扫描除某一个目标地址之外的所有目标地址</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10/24 -exclude 192.168.100.60
+</code></pre>
+<p><strong>扫描除某一文件中的目标地址之外的目标地址</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10/24 -excludefile C:\ip.txt
+</code></pre>
+<p><strong>扫描某一目标地址的21、22、23、80端口</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap 192.168.100.10 -p 21,22,23,80
+</code></pre>
+<p><strong>对目标地址进行路由跟踪</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap --traceroute 192.168.100.10
+</code></pre>
+<p><strong>扫描目标地址所在 C 段的在线情况</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -sP 192.168.100.10/24
+</code></pre>
+<p><strong>目标地址的操作系统指纹识别</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -O 192.168.100.10
+</code></pre>
+<p><strong>目标地址提供的服务版本侦测</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -sV 192.168.100.10
+</code></pre>
+<p><strong>探测防火墙状态</strong><br><code>FIN</code>扫描用于识别端口是否关闭，收到<code>RST</code>恢复说明该端口关闭，否则就是<code>open</code>或<code>filtered</code>状态。</p>
+<pre class=" language-bash"><code class="language-bash">nmap -sF -T4 192.168.100.10
+</code></pre>
+<hr>
+<h3 id="0x006-脚本介绍"><a href="#0x006-脚本介绍" class="headerlink" title="0x006 脚本介绍"></a>0x006 脚本介绍</h3><hr>
+<p><code>Nmap</code>脚本默认存在<code>/xx/nmap/scripts</code>文件夹下</p>
+<p><code>Nmap</code>脚本主要分为以下几类：</p>
+<ul>
+<li>Auth:负责处理鉴权证书（绕过鉴权）的脚本</li>
+<li>Broadcast:在局域网内探测更多服务的开启情况，如DHCP/DNS/SQLServerdeng</li>
+<li>Brute:针对常见的应用提供暴力破解方式，如HTTP/SMTP等</li>
+<li>Default:使用-sC或-A选项扫描时默认的脚本，提供基本的脚本扫描能力</li>
+<li>Discovery:对网络进行更多信息的搜集，如SMB枚举、SNMP查询等</li>
+<li>Dos:用于进行拒绝服务攻击</li>
+<li>Exploit:利用已知的漏洞入侵系统</li>
+<li>External:利用第三方的数据库或资源。例如：进行whois解析</li>
+<li>Fuzzer:模糊测试脚本，发送异常的包到目标机，探测出潜在漏洞</li>
+<li>Intrusive:入侵性的脚本，此类脚本可能引发对方的IDS/IPS的记录或屏蔽</li>
+<li>Malware:探测目标机是否感染了病毒，属于安全性脚本</li>
+<li>Safe:此类与Intrusive相反，属于安全性脚本</li>
+<li>Version:负责增强服务与版本扫描功能的脚本</li>
+<li>Vuln:负责检查目标机是否有常见漏洞，如MS08-067</li>
+</ul>
+<hr>
+<h3 id="0x007-nmap-进阶"><a href="#0x007-nmap-进阶" class="headerlink" title="0x007 nmap 进阶"></a>0x007 nmap 进阶</h3><hr>
+<p>常用脚本实例</p>
+<p><strong>鉴权扫描</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap --script<span class="token operator">=</span>auth 192.168.100.10
+</code></pre>
+<p><strong>暴力破解攻击</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap --script<span class="token operator">=</span>brute 192.168.100.10
+</code></pre>
+<p><strong>扫描常见的端口</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap --script<span class="token operator">=</span>vuln 192.168.100.10
+</code></pre>
+<p><strong>应用服务扫描</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap --script<span class="token operator">=</span>realvnc-auth-bypass
+</code></pre>
+<p> 192.168.100.10<br><strong>探测局域网内更多服务开启的情况</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -n -p 445 --script<span class="token operator">=</span>broadcast 192.168.100.10
+</code></pre>
+<p><strong>whois解析</strong></p>
+<pre class=" language-bash"><code class="language-bash">nmap -script external baidu.com
+</code></pre>
+<hr>
+<h3 id="0x008-更多教程"><a href="#0x008-更多教程" class="headerlink" title="0x008 更多教程"></a>0x008 更多教程</h3><hr>
+<p><a target="_blank" rel="noopener" href="https://nmap.org/">nmap官网</a></p>
+
+                
+            </div>
+            <hr/>
 
             
 
-            
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Cx330</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://Cx330Lm.github.io/2022/08/12/toc-heading-7/">http://Cx330Lm.github.io/2022/08/12/toc-heading-7/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Cx330</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
 
-            
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
 
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Web-Security/">
+                                    <span class="chip bg-color">Web Security</span>
+                                </a>
+                            
+                                <a href="/tags/nmap/">
+                                    <span class="chip bg-color">nmap</span>
+                                </a>
+                            
+                                <a href="/tags/tools/">
+                                    <span class="chip bg-color">tools</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
             
-            <style>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -675,15 +1114,255 @@
     });
 </script>
 
-            
-			
-			
+    
 
-            
+    
 
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/08/12/toc-heading-7/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="WEB安全Nmap基础">
+                        
+                        <span class="card-title">WEB安全Nmap基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Nmap是一款开源免费的网络发现（`Network Discovery`）和安全审计（`Security Auditing`）工具。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/nmap/" class="post-category">
+                                    nmap
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Web-Security/">
+                        <span class="chip bg-color">Web Security</span>
+                    </a>
+                    
+                    <a href="/tags/nmap/">
+                        <span class="chip bg-color">nmap</span>
+                    </a>
+                    
+                    <a href="/tags/tools/">
+                        <span class="chip bg-color">tools</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/08/12/toc-heading-6/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="WEB安全PHP基础">
+                        
+                        <span class="card-title">WEB安全PHP基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            PHP（Hypertext Preprocessor）即“超文本预处理器”，是在服务器端执行的脚本语言，尤其适用于Web开发并可嵌入HTML中。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/PHP/" class="post-category">
+                                    PHP
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/HTML/">
+                        <span class="chip bg-color">HTML</span>
+                    </a>
+                    
+                    <a href="/tags/Web-Security/">
+                        <span class="chip bg-color">Web Security</span>
+                    </a>
+                    
+                    <a href="/tags/PHP/">
+                        <span class="chip bg-color">PHP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
+
+
 
 
     <!-- 白天和黑夜主题 -->
