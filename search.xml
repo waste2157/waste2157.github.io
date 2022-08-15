@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>内网穿透神器</title>
+      <link href="/2022/08/15/toc-heading-9/"/>
+      <url>/2022/08/15/toc-heading-9/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0x001-frp"><a href="#0x001-frp" class="headerlink" title="0x001 frp"></a>0x001 frp</h3><hr><h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>frp 是一个专注于内网穿透的高性能的反向代理应用，支持 TCP、UDP、HTTP、HTTPS 等多种协议。可以将内网服务以安全、便捷的方式通过具有公网 IP 节点的中转暴露到公网。</p><p>下载地址：<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a></p><h4 id="2-使用方法"><a href="#2-使用方法" class="headerlink" title="2. 使用方法"></a>2. 使用方法</h4><p>在具有公网 IP 的机器上部署 frps，修改 frps.ini 文件，这里使用了最简化的配置，设置了 frp 服务器用户接收客户端连接的端口：</p><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>common<span class="token punctuation">]</span>bind_port <span class="token operator">=</span> 7000</code></pre><p>在需要被访问的内网机器上（SSH 服务通常监听在 22 端口）部署 frpc，修改 frpc.ini 文件，假设 frps 所在服务器的公网 IP 为 x.x.x.x：</p><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>common<span class="token punctuation">]</span>server_addr <span class="token operator">=</span> x.x.x.xserver_port <span class="token operator">=</span> 7000<span class="token punctuation">[</span>ssh<span class="token punctuation">]</span><span class="token function">type</span> <span class="token operator">=</span> tcplocal_ip <span class="token operator">=</span> 127.0.0.1local_port <span class="token operator">=</span> 22remote_port <span class="token operator">=</span> 6000</code></pre><blockquote><p>local_ip 和 local_port 配置为本地需要暴露到公网的服务地址和端口。remote_port 表示在 frp 服务端监听的端口，访问此端口的流量将会被转发到本地服务对应的端口。</p></blockquote><p>分别启动 frps 和 frpc。</p><pre class=" language-bahs"><code class="language-bahs">服务端启动./frps -c ./frps.ini客户端启动./frpc -c ./frpc.ini</code></pre><h4 id="3-更多使用方法"><a href="#3-更多使用方法" class="headerlink" title="3. 更多使用方法"></a>3. 更多使用方法</h4><p><a href="https://frps.cn/11.html">frp官方文档介绍</a></p><hr><h3 id="0x002-ngrok"><a href="#0x002-ngrok" class="headerlink" title="0x002 ngrok"></a>0x002 ngrok</h3><hr><h4 id="1-介绍-1"><a href="#1-介绍-1" class="headerlink" title="1. 介绍"></a>1. 介绍</h4><p>Ngrok 是一个反向代理，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。Ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放。简单来说，利用 Ngrok 可以通过外网来访问部署在本地服务器的网站，它还提供一个 Web 管理页来监控 HTTP 通信报文，方便程序员发现问题、开发调试。另外 Ngrok 还支持 TCP 层端口映射，不局限于某一特定的服务。支持 Mac OS X，Linux，Windows 平台。</p><p>下载地址：<a href="http://ngrok.cn/download.html">http://ngrok.cn/download.html</a></p><h4 id="2-使用方法-1"><a href="#2-使用方法-1" class="headerlink" title="2. 使用方法"></a>2. 使用方法</h4><p>Windows：下载解压，然后双击运行 ngrok.exe 即可</p><p>Linux：下载使用 <code>unzip /path/to/ngrok.zip</code> 命令解压，然后输入  <code>./ngrok help</code> 命令运行即可。</p><p><strong>将本地Web服务器公开到互联网</strong></p><pre class=" language-bash"><code class="language-bash">ngrok.exe http 80</code></pre><blockquote><p>默认是将 80 端口公开到外网</p></blockquote><p>当您启动ngrok时，它将在您的终端中显示一个UI，其中包含您的隧道的公共URL以及有关通过您的隧道进行的连接的其他状态和指标信息。</p><pre class=" language-bash"><code class="language-bash">ngrok by @inconshreveable Tunnel Status                 onlineVersion                       2.0/2.0Web Interface                 http://127.0.0.1:4040Forwarding                    http://92832de0.ngrok.io -<span class="token operator">></span> localhost:80Forwarding                    https://92832de0.ngrok.io -<span class="token operator">></span> localhost:80 Connnections                  ttl     opn     rt1     rt5     p50     p90                              0       0       0.00    0.00    0.00    0.00</code></pre><p>此外，ngrok 还提供了一个实时的 Web UI，可以在其中内省您的隧道上运行的所有HTTP流量。只需要访问 <a href="http://localhost:4040/">http://localhost:4040</a> 即可检查请求详细信息。</p><p><img src="https://s1.ax1x.com/2022/08/15/vdZH3D.jpg" alt="查看请求信息"></p><p>重播请求</p><p>为外部API发出的webhooks开发通常会减慢你的开发周期，因为要求你做一些工作，比如拨打电话，触发挂钩请求。 ngrok允许您通过一次点击重新播放任何请求，大幅加快您的迭代周期。 单击Web检查UI上任何请求右上角的Replay按钮以重播。</p><p>请求正文验证</p><p>ngrok特别支持在网络上使用的最常见的数据交换格式。请求或响应正文中的任何XML或JSON数据会自动为您打印并检查语法错误。</p><p>更多高级功能请前往 <a href="https://dashboard.ngrok.com/signup">https://dashboard.ngrok.com/signup</a> 注册账号后使用</p><h4 id="3-更多使用方法-1"><a href="#3-更多使用方法-1" class="headerlink" title="3. 更多使用方法"></a>3. 更多使用方法</h4><p><a href="http://ngrok.cn/docs.html#expose">ngrok中文版文档</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> frp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web Security </tag>
+            
+            <tag> tools </tag>
+            
+            <tag> frp </tag>
+            
+            <tag> ngrok </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SQLMap入门</title>
       <link href="/2022/08/15/toc-heading-8/"/>
       <url>/2022/08/15/toc-heading-8/</url>
